@@ -16,7 +16,7 @@ $refreshContents = <<<EOL
             jQuery("#contactRateContainer").html(data.converRate);
             jQuery("#averageHoldTimeContainer").html(data.aveHoldTime);
             jQuery("#convertedDealValue").html(data.convertedDeal);
-            // jQuery("#managerMessagesContainer").html(data.);
+            jQuery("#managerMessagesContainer").html(data.tbc);
             tmpConvertedDealRaw = parseFloat(data.convertedDealRaw);
             if (tmpConvertedDealRaw >= 4347) {
               jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","green");
@@ -211,7 +211,11 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               </div> <!-- /widget-header -->
               
               <div class="widget-content" style="background-color: #000090;color: white;">
-                <div class='big-label'><b id="managerMessagesContainer">??</b></div>
+                <div class='big-label'>
+                  <b id="managerMessagesContainer">
+                    <?php echo $tbc ?>
+                  </b>
+                </div>
               </div> <!-- /widget-content -->
             
             </div> <!-- /widget -->

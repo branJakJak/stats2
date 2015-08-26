@@ -34,23 +34,18 @@ class SiteController extends Controller
         $data['convertedDealCount'] = ConvertedDealCount::getAverage();
         $data['converRate'] = AverageContactRate::getAverage();
         $data['converRate']  = $data['converRate'].'%';
+        $data['tbc'] = NumContactedReport::getNumberContact();
+  	   	$data['tbc'] = ceil($data['tbc'] / $data['convertedDeal']);
 
-		// $data = array(
-		// 		"called"=>"99",
-		// 		"waiting"=>"99",
-		// 		"convertedDeal"=>2000,
-		// 		"aveHoldTime"=>"99",
-		// 		"convertedDealCount"=>"99",
-		// 		"converRate"=>"10 %",
-		// 		"aveHoldTime"=>"0.0",
-		// 		"averageHoldTime"=>"99.99",
-		// 	);        
+		// $data = DataPlaceholder::generateFakeData();
+
+ 
         $tempAveHoldTime = doubleval($data['aveHoldTime']);
         if ($tempAveHoldTime != 0) {
         	/*store to session */
         	Yii::app()->request->cookies['aveHoldTime'] = new CHttpCookie('aveHoldTime', $tempAveHoldTime);
         	// echo "here";
-        }else{
+        } else {
         	// echo "here else";
         	$tempAveHoldTime = Yii::app()->request->cookies['aveHoldTime']->value;
         }
@@ -78,6 +73,7 @@ class SiteController extends Controller
                 "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
                 "converRate"=>$data['converRate'],
                 "averageHoldTime"=>$tempAveHoldTime,
+                "tbc"=>$data['tbc'],
 			));
 	}
 
