@@ -207,14 +207,14 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
                 
               <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
                 <!-- <i class="icon-signal"></i> -->
-                TBC
+                TBC (<?php echo $convertedDealCount ?> / <?php echo $orig_tbc ?>)
               </div> <!-- /widget-header -->
               
               <div class="widget-content" style="background-color: #000090;color: white;">
                 <div class='big-label'>
                   <b id="managerMessagesContainer">
                     <?php echo $tbc ?>
-                  </b>
+                  </b> %
                 </div>
               </div> <!-- /widget-content -->
             
