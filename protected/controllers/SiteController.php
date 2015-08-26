@@ -34,8 +34,8 @@ class SiteController extends Controller
         $data['convertedDealCount'] = ConvertedDealCount::getAverage();
         $data['converRate'] = AverageContactRate::getAverage();
         $data['converRate']  = $data['converRate'].'%';
-        $data['tbc'] = NumContactedReport::getNumberContact();
-  	   	$data['tbc'] = ceil($data['tbc'] / $data['convertedDeal']);
+        $data['orig_tbc'] = NumContactedReport::getNumberContact();
+  	   	$data['tbc'] = ceil($data['orig_tbc'] / $data['convertedDeal']);
 
 		// $data = DataPlaceholder::generateFakeData();
 
@@ -74,6 +74,7 @@ class SiteController extends Controller
                 "converRate"=>$data['converRate'],
                 "averageHoldTime"=>$tempAveHoldTime,
                 "tbc"=>$data['tbc'],
+                "orig_tbc"=>$data['orig_tbc'],
 			));
 	}
 
