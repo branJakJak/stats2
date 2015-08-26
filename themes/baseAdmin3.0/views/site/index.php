@@ -212,7 +212,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               
               <div class="widget-content" style="background-color: #000090;color: white;">
                 <div class='big-label'>
-                  <b id="managerMessagesContainer" style="font-size: 60px;">
+                  <b id="managerMessagesContainer" style="font-size: 80px;">
                     <?php echo $tbc ?>
                   </b>
                 </div>
