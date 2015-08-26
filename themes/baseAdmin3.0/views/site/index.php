@@ -207,7 +207,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
                 
               <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
                 <!-- <i class="icon-signal"></i> -->
-                TBC (<?php echo $orig_tbc ?>/$convertedDeal)
+                TBC (<?php echo $orig_tbc ?>/<?php echo $convertedDeal ?>)
               </div> <!-- /widget-header -->
               
               <div class="widget-content" style="background-color: #000090;color: white;">
