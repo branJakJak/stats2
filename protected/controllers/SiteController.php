@@ -35,7 +35,7 @@ class SiteController extends Controller
         $data['converRate'] = AverageContactRate::getAverage();
         $data['converRate']  = $data['converRate'].'%';
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
-  	   	$data['tbc'] = ceil($data['orig_tbc'] / $data['convertedDeal']);
+  	   	$data['tbc'] = ceil($data['orig_tbc'] / $data['convertedDealCount']);
 
 		// $data = DataPlaceholder::generateFakeData();
 
