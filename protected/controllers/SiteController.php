@@ -38,7 +38,8 @@ class SiteController extends Controller
   	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
   	   	$data['tbc'] = $data['tbc'].' %';
 
- 
+		// $data = DataPlaceholder::generateFakeData();
+
         $tempAveHoldTime = doubleval($data['aveHoldTime']);
         if ($tempAveHoldTime != 0) {
         	/*store to session */
@@ -65,14 +66,14 @@ class SiteController extends Controller
             echo json_encode($data);
             Yii::app()->end();
         }
-		$this->render('index',array(
+		$this->render('newui',array(
                 'waiting'=>$data['waiting'],
                 "called"=>$data['called'],
                 "convertedDeal"=>doubleval($data['convertedDeal']),
                 "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
                 "converRate"=>$data['converRate'],
                 "averageHoldTime"=>$tempAveHoldTime,
-                'orig_averageHoldTime' = $orig_tempAveHoldTime,
+                'orig_averageHoldTime' => $orig_tempAveHoldTime,
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
 			));
@@ -92,7 +93,7 @@ class SiteController extends Controller
         }
         $tempAveHoldTime = doubleval($tempAveHoldTime);
         $tempAveHoldTime = ceil($tempAveHoldTime);
-        $tempAveHoldTime  = number_format($tempAveHoldTime);
+        $orig_averageHoldTime = $tempAveHoldTime;
 		$tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
 
 
@@ -103,6 +104,7 @@ class SiteController extends Controller
         	$data["converRate"] = $data['converRate'];
         	$data['aveHoldTime'] = $tempAveHoldTime; //convert and format
         	$data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
+        	$data['orig_averageHoldTime'] = $orig_averageHoldTime;
             echo json_encode($data);
             Yii::app()->end();
         }
@@ -115,6 +117,7 @@ class SiteController extends Controller
                 "averageHoldTime"=>$tempAveHoldTime,
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
+                "orig_averageHoldTime"=>$orig_averageHoldTime
 			));
 	}
 	/**
