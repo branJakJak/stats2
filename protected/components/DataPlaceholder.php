@@ -8,14 +8,14 @@ class DataPlaceholder
 	public static function generateFakeData()
 	{
 		$data = [];
-		$data['waiting'] = 123;
-		$data['called'] = 123;
-                $data['convertedDeal'] = 16;
-                $data['aveHoldTime'] = 600;
-                $data['convertedDealCount'] = 100;
-                $data['converRate'] = 53;
-                $data['orig_tbc'] = 591;
-                $data['tbc'] = 591/$data['convertedDeal'];
+		$data['waiting'] = rand(100,150);
+		$data['called'] = rand(100,150);
+                $data['convertedDeal'] = rand(15,50);
+                $data['aveHoldTime'] = rand(320,500);
+                $data['convertedDealCount'] = rand(80,150);
+                $data['converRate'] = rand(53,120);
+                $data['orig_tbc'] = rand(180,500);
+                $data['tbc'] = $data['orig_tbc']/$data['convertedDeal'];
                 $data['tbc'] = round($data['tbc'],2) .' %';
                 return $data;
 	}

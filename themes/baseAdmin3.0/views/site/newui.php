@@ -34,7 +34,7 @@ $refreshContents = <<<EOL
         });
     }
     setInterval(function () {
-        //refreshContents();
+      refreshContents();
     }, 10 * 1000);
 
 EOL;
@@ -168,15 +168,14 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            Average Wait Time
-          </div>
+            Converted Deals
+          </div> <!-- /widget-header -->
           <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
-            <div style="font-size: 100px;padding-top:20px;">
-                <b id="averageHoldTimeContainer"><?php echo $averageHoldTime ?></b>
-                <!-- <?php echo $orig_averageHoldTime ?> -->
+            <div class='big-label'>
+              <b id="convertedDealCountContainer"><?php echo $convertedDealCount ?></b>
             </div>
           </div> <!-- /widget-content -->
-        </div> <!-- /widget --> 
+        </div> <!-- /widget -->
       </div>
       <div class="col-md-3 col-lg-3 col-md-1 col-md-offset-1 col-lg-offset-1 ">
         <div class="row">
@@ -214,14 +213,16 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            Converted Deals
-          </div> <!-- /widget-header -->
+            Average Wait Time
+          </div>
           <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
-            <div class='big-label'>
-              <b id="convertedDealCountContainer"><?php echo $convertedDealCount ?></b>
+            <div style="font-size: 100px;padding-top:20px;">
+                <b id="averageHoldTimeContainer"><?php echo $averageHoldTime ?></b>
+                <!-- <?php echo $orig_averageHoldTime ?> -->
             </div>
           </div> <!-- /widget-content -->
         </div> <!-- /widget -->
+
       </div>
       <div class="col-md-4 col-lg-4">
         <div class="widget ">
@@ -249,8 +250,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               </label>
             </div>
             <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 15px;">
-                48 %  
+              <label class='value' style="margin-top: 15px;" id="contactRateContainer">
+                <?php echo $converRate ?>
               </label>
             </div>
             <div class="clearfix"></div>
@@ -262,8 +263,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               <label>Conversion to HC</label>
             </div>
             <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 12px;">
-                8%
+              <label class='value' style="margin-top: 12px;font-size:40px" id="managerMessagesContainer">
+                <?php echo $tbc ?>
               </label>
             </div>
             <div class="clearfix"></div>
@@ -273,7 +274,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row hidden">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-md-4 col-lg-4">
         <div class="widget ">
@@ -283,7 +284,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-header -->
           <div class="widget-content"  style='background: #4f85bb; /* Old browsers */  background: -moz-linear-gradient(top, #4f85bb 0%, #4f85bb 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f85bb), color-stop(100%,#4f85bb)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #4f85bb 0%,#4f85bb 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #4f85bb 0%,#4f85bb 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #4f85bb 0%,#4f85bb 100%); /* IE10+ */  background: linear-gradient(to bottom, #4f85bb 0%,#4f85bb 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */;  '>
             <div style='font-size: 100px;padding-top:20px;'>
-              <b id="contactRateContainer" style="font-size: 117px;color: white;"><?php echo $converRate ?></b>
+              <!-- <b id="contactRateContainer" style="font-size: 117px;color: white;"><?php echo $converRate ?></b> -->
             </div>
           </div> <!-- /widget-content -->
         </div> <!-- /widget -->
@@ -297,8 +298,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           
           <div class="widget-content" style="background-color: #000090;color: white;">
             <div class='big-label'>
-              <b id="managerMessagesContainer" style="font-size: 80px;">
-                <?php echo $tbc ?>
+              <b id="" style="font-size: 80px;">
+                
               </b>
             </div>
           </div> <!-- /widget-content -->

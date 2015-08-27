@@ -191,7 +191,6 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
         </div> <!-- /span4 -->
          <div class="col-md-4 col-lg-4">
             <div class="widget ">
-                
               <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
                 <!-- <i class="icon-signal"></i> -->
                 Contact Rate
