@@ -28,6 +28,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$data = LiveCallReport::getLiveReport();
+		$leadInfoContainer = LeadInfoReport::getLiveReport();
         $data['convertedDeal'] = ConvertedDealReport::getLiveReport();
         $data['convertedDeal'] = ceil($data['convertedDeal']);
         $data['aveHoldTime'] = AverageHoldTimeReport::getAverage();
@@ -37,18 +38,15 @@ class SiteController extends Controller
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
   	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
   	   	$data['tbc'] = $data['tbc'].' %';
+  	   	$data['leads'] = $leadInfoContainer['leads'];
+  	   	$data['contacted'] = $leadInfoContainer['contacted'];
 
-  	   	$data = array_merge($data, LeadInfoReport::getLiveReport());
-
-		// $data = DataPlaceholder::generateFakeData();
+		$data = DataPlaceholder::generateFakeData();
 
         $tempAveHoldTime = doubleval($data['aveHoldTime']);
         if ($tempAveHoldTime != 0) {
-        	/*store to session */
         	Yii::app()->request->cookies['aveHoldTime'] = new CHttpCookie('aveHoldTime', $tempAveHoldTime);
-        	// echo "here";
         } else {
-        	// echo "here else";
         	$tempAveHoldTime = Yii::app()->request->cookies['aveHoldTime']->value;
         }
         
@@ -62,7 +60,7 @@ class SiteController extends Controller
         	$data['convertedDealRaw'] = $data['convertedDeal'];
         	$data['convertedDeal'] = "&pound;".number_format(doubleval($data['convertedDeal']));
         	$data["converRate"] = $data['converRate'];
-        	$data['aveHoldTime'] = $tempAveHoldTime; //convert and format
+        	$data['aveHoldTime'] = $tempAveHoldTime;
         	$data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
         	$data['orig_averageHoldTime'] = $orig_tempAveHoldTime;
             echo json_encode($data);
