@@ -72,7 +72,7 @@ class SiteController extends Controller
                 "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
                 "converRate"=>$data['converRate'],
                 "averageHoldTime"=>$tempAveHoldTime,
-                'orig_averageHoldTime' = $orig_tempAveHoldTime;
+                'orig_averageHoldTime' = $orig_tempAveHoldTime,
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
 			));
