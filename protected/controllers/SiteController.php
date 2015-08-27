@@ -41,7 +41,6 @@ class SiteController extends Controller
   	   	$data['leads'] = $leadInfoContainer['leads'];
   	   	$data['contacted'] = $leadInfoContainer['contacted'];
 
-		$data = DataPlaceholder::generateFakeData();
 
         $tempAveHoldTime = doubleval($data['aveHoldTime']);
         if ($tempAveHoldTime != 0) {
