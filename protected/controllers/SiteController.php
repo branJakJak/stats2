@@ -118,7 +118,9 @@ class SiteController extends Controller
                 "averageHoldTime"=>$tempAveHoldTime,
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
-                "orig_averageHoldTime"=>$orig_averageHoldTime
+                "orig_averageHoldTime"=>$orig_averageHoldTime,
+                "leads"=>$data['leads'],
+                "contacted"=>$data['contacted'],                
 			));
 	}
 	/**

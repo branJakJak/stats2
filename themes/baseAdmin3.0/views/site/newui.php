@@ -36,7 +36,7 @@ $refreshContents = <<<EOL
         });
     }
     setInterval(function () {
-      refreshContents();
+      //refreshContents();
     }, 20 * 1000);
 
 EOL;
