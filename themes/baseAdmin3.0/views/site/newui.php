@@ -247,7 +247,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
         <div class="row ">
           <div class="side-label-container">
             <div class="col-md-6 col-lg-6 side-label-divider">
-              <label style="font-size: 50px;position: relative;top: 16px;">
+              <label style="font-size: 4vw;position: relative;top: 16px;">
                 HC %<br>&nbsp;
               </label>
             </div>
@@ -262,10 +262,10 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
         <div class="row">
           <div class="side-label-container">
             <div class="col-md-6 col-lg-6 side-label-divider">
-              <label>Conversion to HC</label>
+              <label style="font-size: 2vw;">Conversion to HC</label>
             </div>
             <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 12px;font-size:40px" id="managerMessagesContainer">
+              <label class='value' style="margin-top: 12px;font-size:3vw" id="managerMessagesContainer">
                 <?php echo $tbc ?>
               </label>
             </div>
