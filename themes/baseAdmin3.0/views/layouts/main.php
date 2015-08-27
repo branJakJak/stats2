@@ -1,7 +1,7 @@
 <?php
   $baseUrl = Yii::app()->theme->baseUrl; 
   $cs = Yii::app()->getClientScript();
-  Yii::app()->clientScript->registerScriptFile( $baseUrl."/js/libs/jquery-1.9.1.min.js" ,  CClientScript::POS_END);
+  // Yii::app()->clientScript->registerScriptFile( $baseUrl."/js/libs/jquery-1.9.1.min.js" ,  CClientScript::POS_END);
   Yii::app()->clientScript->registerScriptFile( $baseUrl."/js/libs/jquery-ui-1.10.0.custom.min.js" ,  CClientScript::POS_END);
   Yii::app()->clientScript->registerScriptFile( $baseUrl."/js/libs/bootstrap.min.js" ,  CClientScript::POS_END);
   // Yii::app()->clientScript->registerScriptFile( $baseUrl."/js/plugins/flot/jquery.flot.js" ,  CClientScript::POS_END);

@@ -36,11 +36,16 @@ $refreshContents = <<<EOL
         });
     }
     setInterval(function () {
-      refreshContents();
+      //refreshContents();
     }, 20 * 1000);
 
 EOL;
 Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CClientScript::POS_READY);
+
+Yii::app()->clientScript->registerScriptFile($baseUrl.'/js/plugins/bigtext/bigtext.js', CClientScript::POS_END);
+Yii::app()->clientScript->registerScript('fittext', '
+    //jQuery("#convertedDealValue").bigtext();
+  ', CClientScript::POS_READY);
 
 ?>
 <style type="text/css">
@@ -110,7 +115,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
     .side-label-container{
       border: 1px solid white;
       position: relative;
-      margin-left: -69px;
+      /*margin-left: -69px;*/
       background-color: white;
       border-radius: 17px;
       text-align: center;
@@ -162,7 +167,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-header -->
           <div class="widget-content" style="background-color: yellow;;">
             <div class='big-label'>
-              <b id="liveWaitingCallContainer" style="font-size: 117px;color: black;"><?php echo $waiting ?></b>
+              <b class='fit-to-parent' id="liveWaitingCallContainer" style="font-size: 117px;color: black;"><?php echo $waiting ?></b>
             </div>
           </div> <!-- /widget-content -->
         </div> <!-- /widget --> 
@@ -179,8 +184,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-content -->
         </div> <!-- /widget -->
       </div>
-      <div class="col-md-3 col-lg-3 col-md-1 col-md-offset-1 col-lg-offset-1 ">
-        <div class="row">
+      <div class="col-md-4 col-lg-4 ">
+        <div class="">
           <div class="side-label-container">
             <div class="col-md-6 col-lg-6 side-label-divider">
               <label>Total Leads</label>
@@ -193,7 +198,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class="clearfix"></div>
           </div>
         </div>
-        <div class="row">
+        <div class="">
           <div class="side-label-container">
             <div class="col-md-6 col-lg-6 side-label-divider">
               <label>Human Contact</label>
@@ -237,17 +242,17 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           <?php if ($convertedDeal < 4347 ): ?>
             <div class="widget-content " style=" color: white;background: #ff1a00; /* Old browsers */  background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff1a00), color-stop(100%,#ff1a00)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* IE10+ */  background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */;">
           <?php endif ?>
-              <div class='big-label'>
-                <b id="convertedDealValue" style=" font-size: 6.4vw;">&pound;<?php echo number_format($convertedDeal) ?></b>
+              <div class='big-label' >
+                <b id="convertedDealValue" style="font-size: 45%;">&pound;<?php echo number_format($convertedDeal) ?></b>
               </div>
             </div> <!-- /widget-content -->
         </div> <!-- /widget -->
       </div>
-      <div class="col-md-3 col-lg-3 col-md-1 col-md-offset-1 col-lg-offset-1 ">
-        <div class="row ">
+      <div class="col-md-4 col-lg-4 ">
+        <div class=" ">
           <div class="side-label-container">
             <div class="col-md-6 col-lg-6 side-label-divider">
-              <label style="font-size: 4vw;position: relative;top: 16px;">
+              <label style="font-size: 359%;position: relative;top: 16px;">
                 HC %<br>&nbsp;
               </label>
             </div>
@@ -259,13 +264,13 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class="clearfix"></div>
           </div>
         </div>
-        <div class="row">
+        <div class="">
           <div class="side-label-container">
             <div class="col-md-6 col-lg-6 side-label-divider">
-              <label style="font-size: 2vw;">Conversion to HC</label>
+              <label style="font-size: 178%;">Conversion to HC</label>
             </div>
             <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 12px;font-size:3vw" id="managerMessagesContainer">
+              <label class='value' style="margin-top: 12px;font-size:300%" id="managerMessagesContainer">
                 <?php echo $tbc ?>
               </label>
             </div>
