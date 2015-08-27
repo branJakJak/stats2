@@ -10,7 +10,7 @@ class DataPlaceholder
 		$data = [];
 		$data['waiting'] = rand(100,150);
 		$data['called'] = rand(100,150);
-                $data['convertedDeal'] = rand(1500,50000);
+                $data['convertedDeal'] = 9999;
                 $data['aveHoldTime'] = rand(320,500);
                 $data['convertedDealCount'] = rand(80,150);
                 $data['converRate'] = rand(53,120);

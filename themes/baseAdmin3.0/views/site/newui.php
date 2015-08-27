@@ -42,9 +42,9 @@ $refreshContents = <<<EOL
 EOL;
 Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CClientScript::POS_READY);
 
-Yii::app()->clientScript->registerScriptFile($baseUrl.'/js/plugins/bigtext/bigtext.js', CClientScript::POS_END);
+Yii::app()->clientScript->registerScriptFile($baseUrl.'/js/plugins/fittext/fittext.js', CClientScript::POS_END);
 Yii::app()->clientScript->registerScript('fittext', '
-    //jQuery("#convertedDealValue").bigtext();
+    jQuery("#convertedDealValue").fittext();
   ', CClientScript::POS_READY);
 
 ?>
@@ -243,7 +243,7 @@ Yii::app()->clientScript->registerScript('fittext', '
             <div class="widget-content " style=" color: white;background: #ff1a00; /* Old browsers */  background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff1a00), color-stop(100%,#ff1a00)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* IE10+ */  background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */;">
           <?php endif ?>
               <div class='big-label' >
-                <b id="convertedDealValue" style="font-size: 45%;">&pound;<?php echo number_format($convertedDeal) ?></b>
+                <b id="convertedDealValue" style="font-size: 56%;">&pound;<?php echo number_format($convertedDeal) ?></b>
               </div>
             </div> <!-- /widget-content -->
         </div> <!-- /widget -->
