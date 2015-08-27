@@ -51,10 +51,8 @@ class SiteController extends Controller
         
         $tempAveHoldTime = doubleval($tempAveHoldTime);
         $tempAveHoldTime = ceil($tempAveHoldTime);
-        $tempAveHoldTime  = number_format($tempAveHoldTime);
-
         /* convert to HH:MM */
-        // $tempAveHoldTime = round($tempAveHoldTime/60) .':'. ($tempAveHoldTime % 60);
+		$tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['convertedDealRaw'] = $data['convertedDeal'];
@@ -92,6 +90,9 @@ class SiteController extends Controller
         $tempAveHoldTime = doubleval($tempAveHoldTime);
         $tempAveHoldTime = ceil($tempAveHoldTime);
         $tempAveHoldTime  = number_format($tempAveHoldTime);
+		$tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
+
+
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['convertedDealRaw'] = $data['convertedDeal'];

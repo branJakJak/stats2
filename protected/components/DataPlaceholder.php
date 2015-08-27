@@ -11,7 +11,7 @@ class DataPlaceholder
 		$data['waiting'] = 123;
 		$data['called'] = 123;
                 $data['convertedDeal'] = 16;
-                $data['aveHoldTime'] = 132;
+                $data['aveHoldTime'] = 600;
                 $data['convertedDealCount'] = 100;
                 $data['converRate'] = 53;
                 $data['orig_tbc'] = 591;
