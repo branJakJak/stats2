@@ -78,6 +78,8 @@ class SiteController extends Controller
                 'orig_averageHoldTime' => $orig_tempAveHoldTime,
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
+                "leads"=>$data['leads'],
+                "contacted"=>$data['contacted'],
 			));
 	}
 
