@@ -51,6 +51,7 @@ class SiteController extends Controller
         
         $tempAveHoldTime = doubleval($tempAveHoldTime);
         $tempAveHoldTime = ceil($tempAveHoldTime);
+        $orig_tempAveHoldTime = $tempAveHoldTime;
         /* convert to HH:MM */
 		$tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
 
@@ -60,6 +61,7 @@ class SiteController extends Controller
         	$data["converRate"] = $data['converRate'];
         	$data['aveHoldTime'] = $tempAveHoldTime; //convert and format
         	$data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
+        	$data['orig_averageHoldTime'] = $orig_tempAveHoldTime;
             echo json_encode($data);
             Yii::app()->end();
         }
@@ -70,6 +72,7 @@ class SiteController extends Controller
                 "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
                 "converRate"=>$data['converRate'],
                 "averageHoldTime"=>$tempAveHoldTime,
+                'orig_averageHoldTime' = $orig_tempAveHoldTime;
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
 			));
