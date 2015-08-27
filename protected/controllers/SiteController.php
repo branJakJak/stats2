@@ -38,6 +38,8 @@ class SiteController extends Controller
   	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
   	   	$data['tbc'] = $data['tbc'].' %';
 
+  	   	$data = array_merge($data, LeadInfoReport::getLiveReport());
+
 		// $data = DataPlaceholder::generateFakeData();
 
         $tempAveHoldTime = doubleval($data['aveHoldTime']);

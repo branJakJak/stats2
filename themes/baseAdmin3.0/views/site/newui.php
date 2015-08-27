@@ -17,6 +17,8 @@ $refreshContents = <<<EOL
             jQuery("#averageHoldTimeContainer").html(data.aveHoldTime);
             jQuery("#convertedDealValue").html(data.convertedDeal);
             jQuery("#managerMessagesContainer").html(data.tbc);
+            jQuery("#totalLeads").html(data.leads);
+            jQuery("#totalHumanContact").html(data.contacted);
             tmpConvertedDealRaw = parseFloat(data.convertedDealRaw);
             if (tmpConvertedDealRaw >= 4347) {
               jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","green");
@@ -184,8 +186,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               <label>Total Leads</label>
             </div>
             <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 17px;">
-                985
+              <label class='value' style="margin-top: 17px;" id='totalLeads'>
+                <?php echo $leads ?>
               </label>
             </div>
             <div class="clearfix"></div>
@@ -197,8 +199,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               <label>Human Contact</label>
             </div>
             <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 17px;">
-                400
+              <label class='value' style="margin-top: 17px;" id='totalHumanContact'>
+                <?php echo $contacted ?>
               </label>
             </div>
             <div class="clearfix"></div>
