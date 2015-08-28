@@ -44,11 +44,12 @@ class SiteController extends Controller
   	   	$tempAveHoldTimeArr = explode(":", $data['aveHoldTime']);
   	   	unset($tempAveHoldTimeArr[2]);
         $tempAveHoldTime = implode(":", $tempAveHoldTimeArr);
-        if ($tempAveHoldTime != 0) {
-        	Yii::app()->request->cookies['aveHoldTime'] = new CHttpCookie('aveHoldTime', $tempAveHoldTime);
-        } else {
-        	$tempAveHoldTime = Yii::app()->request->cookies['aveHoldTime']->value;
-        }
+        
+        // if ($tempAveHoldTime != 0) {
+        // 	Yii::app()->request->cookies['aveHoldTime'] = new CHttpCookie('aveHoldTime', $tempAveHoldTime);
+        // } else {
+        // 	$tempAveHoldTime = Yii::app()->request->cookies['aveHoldTime']->value;
+        // }
         
   //       $tempAveHoldTime = doubleval($tempAveHoldTime);
   //       $tempAveHoldTime = ceil($tempAveHoldTime);
