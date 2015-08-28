@@ -41,8 +41,9 @@ class SiteController extends Controller
   	   	$data['leads'] = $leadInfoContainer['leads'];
   	   	$data['contacted'] = $leadInfoContainer['contacted'];
 
-
-        $tempAveHoldTime = doubleval($data['aveHoldTime']);
+  	   	$tempAveHoldTimeArr = explode(":", $data['aveHoldTime']);
+  	   	unset($tempAveHoldTimeArr[2]);
+        $tempAveHoldTime = implode(":", $tempAveHoldTimeArr);
         if ($tempAveHoldTime != 0) {
         	Yii::app()->request->cookies['aveHoldTime'] = new CHttpCookie('aveHoldTime', $tempAveHoldTime);
         } else {
