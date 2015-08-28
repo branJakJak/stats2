@@ -42,10 +42,7 @@ $refreshContents = <<<EOL
 EOL;
 Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CClientScript::POS_READY);
 
-Yii::app()->clientScript->registerScriptFile($baseUrl.'/js/plugins/fittext/fittext.js', CClientScript::POS_END);
-Yii::app()->clientScript->registerScript('fittext', '
-    jQuery("#convertedDealValue").fittext();
-  ', CClientScript::POS_READY);
+
 
 ?>
 <style type="text/css">
