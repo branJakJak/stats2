@@ -36,8 +36,8 @@ $refreshContents = <<<EOL
         });
     }
     setInterval(function () {
-      //refreshContents();
-    }, 20 * 1000);
+      refreshContents();
+    }, (5 * 60) * 1000);
 
 EOL;
 Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CClientScript::POS_READY);
