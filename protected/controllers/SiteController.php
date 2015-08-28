@@ -50,11 +50,11 @@ class SiteController extends Controller
         	$tempAveHoldTime = Yii::app()->request->cookies['aveHoldTime']->value;
         }
         
-        $tempAveHoldTime = doubleval($tempAveHoldTime);
-        $tempAveHoldTime = ceil($tempAveHoldTime);
-        $orig_tempAveHoldTime = $tempAveHoldTime;
-        /* convert to HH:MM */
-		$tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
+  //       $tempAveHoldTime = doubleval($tempAveHoldTime);
+  //       $tempAveHoldTime = ceil($tempAveHoldTime);
+  //       $orig_tempAveHoldTime = $tempAveHoldTime;
+  //       /* convert to HH:MM */
+		// $tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['convertedDealRaw'] = $data['convertedDeal'];
