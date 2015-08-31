@@ -36,8 +36,12 @@ class SiteController extends Controller
         $data['converRate'] = AverageContactRate::getAverage();
         $data['converRate']  = $data['converRate'].'%';
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
-  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
-  	   	$data['tbc'] = $data['tbc'].' %';
+        if ($data['orig_tbc'] != '0') {
+	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
+	  	   	$data['tbc'] = $data['tbc'].' %';
+        }else{
+        	$data['tbc'] = '0 %';
+        }
   	   	$data['leads'] = $leadInfoContainer['leads'];
   	   	$data['contacted'] = $leadInfoContainer['contacted'];
 
