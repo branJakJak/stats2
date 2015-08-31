@@ -10,7 +10,7 @@ class AverageContactRate {
         $tempArr = json_decode($curlResRaw, true);
         $tempAveWaitTimeContainer = $tempArr["avgWaitTime"];
         if (is_null($tempArr["avgWaitTime"]) == false) {
-        	$tempAveWaitTimeContainer = $tempArr["avgWaitTime"]
+        	$tempAveWaitTimeContainer = $tempArr["avgWaitTime"];
         }
         return $tempAveWaitTimeContainer;
     }
