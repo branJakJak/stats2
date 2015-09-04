@@ -110,9 +110,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       border-radius: 55px 55px 0px 0px;
     }
     .side-label-container{
-      border: 1px solid white;
-      position: relative;
-      /*margin-left: -69px;*/
+      border: 7px solid white;
       background-color: #000080;
       color: white;
       border-radius: 17px;
@@ -125,10 +123,10 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
     }
     .side-label-container label {
       font-family: 'Open Sans';
-      font-size: 30px;
+      font-size: 40px;
       font-style: normal;
       font-variant: normal;
-      font-weight: normal;
+      font-weight: bolder;
       padding: 32px 1px;
       vertical-align: middle;
       line-height: 31px;
