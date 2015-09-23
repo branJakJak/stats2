@@ -156,7 +156,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-md-4 col-lg-4">
+      <div class="col-md-6 col-lg-6">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Live - Waiting Call
@@ -168,7 +168,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-content -->
         </div> <!-- /widget --> 
       </div>
-      <div class="col-md-4 col-lg-4">
+      <div class="col-md-6 col-lg-6">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Converted Deals
@@ -180,40 +180,12 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-content -->
         </div> <!-- /widget -->
       </div>
-      <div class="col-md-4 col-lg-4 ">
-        <div class="">
-          <div class="side-label-container">
-            <div class="col-md-6 col-lg-6 side-label-divider">
-              <label>Total Leads</label>
-            </div>
-            <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 17px;" id='totalLeads'>
-                <?php echo $leads ?>
-              </label>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-        <div class="">
-          <div class="side-label-container">
-            <div class="col-md-6 col-lg-6 side-label-divider">
-              <label>Human Contact</label>
-            </div>
-            <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 17px;" id='totalHumanContact'>
-                <?php echo $contacted ?>
-              </label>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-md-4 col-lg-6 col-lg-offset-1">
+      <div class="col-md-10 col-lg-10 col-lg-offset-1">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Value &pound;
@@ -230,36 +202,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             </div> <!-- /widget-content -->
         </div> <!-- /widget -->
       </div>
-      <div class="col-md-4 col-lg-4 col-lg-offset-1">
-        <div class=" ">
-          <div class="side-label-container">
-            <div class="col-md-6 col-lg-6 side-label-divider">
-              <label style="font-size: 359%;position: relative;top: 16px;">
-                HC %<br>&nbsp;
-              </label>
-            </div>
-            <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 15px;" id="contactRateContainer">
-                <?php echo $converRate ?>
-              </label>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-        <div class="">
-          <div class="side-label-container">
-            <div class="col-md-6 col-lg-6 side-label-divider">
-              <label style="font-size: 178%;">Conversion to HC</label>
-            </div>
-            <div class="col-md-6 col-lg-6">
-              <label class='value' style="margin-top: 12px;font-size:300%" id="managerMessagesContainer">
-                <?php echo $tbc ?>
-              </label>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
   <hr>
