@@ -11,7 +11,7 @@ class NumContactedReport
         curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
         $curlResRaw = curl_exec($curlres);
         $tempArr = json_decode($curlResRaw, true);
-        return $tempArr["numContacted"];
+        return doubleval($tempArr["numContacted"]);
 	}	
 
 }
