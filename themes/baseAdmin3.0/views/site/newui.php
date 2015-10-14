@@ -288,7 +288,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-header -->
           <div class="widget-content" style="color: white;background: darkblue;">
             <div class='big-label'>
-              <b id="liveRevDvalue" style="font-size:87%">
+              <b id="liveRevDvalue" style="font-size:68%">
                 &pound; <?php echo $revDVal ?>
               </b>
             </div>
