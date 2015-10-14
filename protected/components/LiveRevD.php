@@ -11,6 +11,6 @@ class LiveRevD
 	{
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = $dbConnection->createCommand("SELECT * FROM roadto_rich.display_pi_today")->queryRow();
-		return doubleval($result['total']);
+		return doubleval($result['Day_Total']);
 	}
 }
