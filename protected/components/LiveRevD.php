@@ -11,6 +11,6 @@ class LiveRevD
 	{
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = $dbConnection->createCommand("SELECT * FROM roadto_rich.debt_apporved_today")->queryRow();
-		return $result['total'];		
+		return doubleval($result['total']);
 	}
 }
