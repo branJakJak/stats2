@@ -263,9 +263,10 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
                 &pound; <?php echo $revPVal ?>
               </b>
             </div>
+          </div>
 
 
-        </div> <!-- /widget --> 
+      </div> <!-- /widget --> 
       </div>
       <div class="col-md-6 col-lg-6">
         <div class="widget ">
