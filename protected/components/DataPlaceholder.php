@@ -19,6 +19,7 @@ class DataPlaceholder
                 $data['tbc'] = round($data['tbc'],2) .' %';
                 $data['leads'] = 123;
                 $data['contacted'] = 321;
+                $data['liveRevDvalue'] = rand(50,120);
                 return $data;
 	}
 }

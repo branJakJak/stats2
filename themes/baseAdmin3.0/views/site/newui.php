@@ -25,6 +25,7 @@ $refreshContents = <<<EOL
             }else{
               jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","red");
             }
+            jQuery("#liveRevDvalue").html(data.liveRevDvalue);
             console.log(data);
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -183,13 +184,15 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row hidden">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-md-10 col-lg-10 col-lg-offset-1">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Value &pound;
           </div> <!-- /widget-header -->
+
+
           <?php if ($convertedDeal >= 4347 ): ?>
             <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
           <?php endif ?>
@@ -197,15 +200,19 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class="widget-content " style=" color: white;background: #ff1a00; /* Old browsers */  background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff1a00), color-stop(100%,#ff1a00)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* IE10+ */  background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */;">
           <?php endif ?>
               <div class='big-label' >
-                <b id="convertedDealValue" style="font-size: 87%;">&pound; <?php echo number_format($convertedDeal) ?></b>
+                <b id="convertedDealValue" style="font-size: 87%;">
+                  &pound; <?php echo number_format($convertedDeal) ?>
+                </b>
               </div>
             </div> <!-- /widget-content -->
-        </div> <!-- /widget -->
+
+
+          </div> <!-- /widget -->
       </div>
       
     </div>
   </div>
-  <hr>
+
   <div class="row hidden">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-md-4 col-lg-4">
@@ -241,4 +248,56 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-md-6 col-lg-6">
+        <div class="widget ">
+          <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
+            REV P
+          </div> <!-- /widget-header -->
+
+
+          <!-- <div class="widget-content" style="background-color: yellow;;"> -->
+            <!-- <div class=''> -->
+              <b class='fit-to-parent' style="font-size: 87%;color: black;padding-top: 0px;">
+                <?php if ($convertedDeal >= 4347 ): ?>
+                  <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
+                  <?php endif ?>
+                  <?php if ($convertedDeal < 4347 ): ?>
+                  <div class="widget-content " style=" color: white;background: #ff1a00; /* Old browsers */  background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff1a00), color-stop(100%,#ff1a00)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* IE10+ */  background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */;">
+                  <?php endif ?>
+                      <div class='big-label' >
+                        <b id="convertedDealValue" style="font-size: 87%;">
+                          &pound; <?php echo number_format($convertedDeal) ?>
+                        </b>
+                      </div>
+                  </div> <!-- /widget-content -->
+              </b>
+
+            <!-- </div> -->
+          <!-- </div> --> <!-- /widget-content -->
+
+
+
+        </div> <!-- /widget --> 
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <div class="widget ">
+          <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
+            REV D
+          </div> <!-- /widget-header -->
+          <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
+            <div class='big-label'>
+              <b id="liveRevDvalue" style="font-size:87%">
+                <?php echo $revDVal ?>
+              </b>
+            </div>
+          </div> <!-- /widget-content -->
+        </div> <!-- /widget -->
+      </div>
+    </div>
+  </div>
+
+
+
 </div> <!-- /container -->

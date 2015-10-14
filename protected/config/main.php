@@ -60,6 +60,14 @@ return array(
           'charset' => 'utf8',
           ),
          */
+        'roadtoriches'=>array(
+            'class' => 'CDbConnection',
+            'connectionString' => 'mysql:host=localhost;dbname=roadto_rich',
+            'emulatePrepare' => true,
+            'username' => 'roadto',
+            'password' => 'V-ytUr33f$w#',
+            'charset' => 'utf8',
+          ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',

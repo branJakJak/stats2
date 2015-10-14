@@ -36,6 +36,9 @@ class SiteController extends Controller
         $data['converRate'] = AverageContactRate::getAverage();
         $data['converRate']  = $data['converRate'].'%';
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
+
+        $data['liveRevDvalue'] = LiveRevD::getValue();
+
         if ($data['orig_tbc'] != '0') {
 	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
 	  	   	$data['tbc'] = $data['tbc'].' %';
@@ -49,19 +52,9 @@ class SiteController extends Controller
   	   	unset($tempAveHoldTimeArr[2]);
         $tempAveHoldTime = implode(":", $tempAveHoldTimeArr);
         
-        // if ($tempAveHoldTime != 0) {
-        // 	Yii::app()->request->cookies['aveHoldTime'] = new CHttpCookie('aveHoldTime', $tempAveHoldTime);
-        // } else {
-        // 	$tempAveHoldTime = Yii::app()->request->cookies['aveHoldTime']->value;
-        // }
-        
-  //       $tempAveHoldTime = doubleval($tempAveHoldTime);
-  //       $tempAveHoldTime = ceil($tempAveHoldTime);
-  //       $orig_tempAveHoldTime = $tempAveHoldTime;
-  //       /* convert to HH:MM */
-		// $tempAveHoldTime =  sprintf("%02d:%02d",intval($tempAveHoldTime/60),($tempAveHoldTime % 60));
 
         if (Yii::app()->request->isAjaxRequest) {
+        	$data['liveRevDvalue'] = $data['liveRevDvalue'];
         	$data['convertedDealRaw'] = $data['convertedDeal'];
         	$data['convertedDeal'] = "&pound;".number_format(doubleval($data['convertedDeal']));
         	$data["converRate"] = $data['converRate'];
@@ -72,6 +65,7 @@ class SiteController extends Controller
             Yii::app()->end();
         }
 		$this->render('newui',array(
+                'revDVal'=>$data['liveRevDvalue'],
                 'waiting'=>$data['waiting'],
                 "called"=>$data['called'],
                 "convertedDeal"=>doubleval($data['convertedDeal']),
@@ -82,7 +76,7 @@ class SiteController extends Controller
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
                 "leads"=>$data['leads'],
-                "contacted"=>$data['contacted'],
+                "contacted"=>$data['contacted']
 			));
 	}
 
@@ -106,6 +100,7 @@ class SiteController extends Controller
 
 
         if (Yii::app()->request->isAjaxRequest) {
+        	$data['liveRevDvalue'] = $data['liveRevDvalue'];
         	$data['convertedDealRaw'] = $data['convertedDeal'];
         	$data['convertedDeal'] = "&pound;".number_format(doubleval($data['convertedDeal']));
         	$data["converRate"] = $data['converRate'];
@@ -116,6 +111,7 @@ class SiteController extends Controller
             Yii::app()->end();
         }
 		$this->render('newui',array(
+                'revDVal'=>rand(50,150),
                 'waiting'=>$data['waiting'],
                 "called"=>$data['called'],
                 "convertedDeal"=>doubleval($data['convertedDeal']),
