@@ -38,6 +38,7 @@ class SiteController extends Controller
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
 
         $data['liveRevDvalue'] = LiveRevD::getValue();
+        $data['liveRevPvalue'] = LiveRevP::getValue();
 
         if ($data['orig_tbc'] != '0') {
 	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
@@ -55,6 +56,7 @@ class SiteController extends Controller
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['liveRevDvalue'] = $data['liveRevDvalue'];
+        	$data['liveRevPvalue'] = $data['liveRevPvalue'];
         	$data['convertedDealRaw'] = $data['convertedDeal'];
         	$data['convertedDeal'] = "&pound;".number_format(doubleval($data['convertedDeal']));
         	$data["converRate"] = $data['converRate'];
@@ -66,6 +68,7 @@ class SiteController extends Controller
         }
 		$this->render('newui',array(
                 'revDVal'=>$data['liveRevDvalue'],
+                'revPVal'=>$data['liveRevPvalue'],
                 'waiting'=>$data['waiting'],
                 "called"=>$data['called'],
                 "convertedDeal"=>doubleval($data['convertedDeal']),
