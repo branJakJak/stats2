@@ -25,7 +25,7 @@ $refreshContents = <<<EOL
             }else{
               jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","red");
             }
-            jQuery("#liveRevDvalue").html(data.liveRevDvalue);
+            jQuery("#liveRevDvalue").html("&pound; "+data.liveRevDvalue);
             console.log(data);
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -289,7 +289,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           <div class="widget-content" style="color: white;background: darkblue;">
             <div class='big-label'>
               <b id="liveRevDvalue" style="font-size:87%">
-                <?php echo $revDVal ?>
+                &pound; <?php echo $revDVal ?>
               </b>
             </div>
           </div> <!-- /widget-content -->
