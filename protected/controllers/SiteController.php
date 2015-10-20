@@ -86,7 +86,6 @@ class SiteController extends Controller
                 "contacted"=>$data['contacted']
 			));
 	}
-
 	public function actionNewui()
 	{
 		$data = DataPlaceholder::generateFakeData();

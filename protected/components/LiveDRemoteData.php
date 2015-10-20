@@ -6,11 +6,11 @@
 class LiveDRemoteData
 {
 	public static function getValue(){
-		//@TODO
-		// $dbConnection = Yii::app()->roadtoriches;
-		// $result = $dbConnection->createCommand("SELECT * FROM roadto_rich.debt_apporved_today")->queryRow();
-		// $doubleEval = doubleval($result['total']);
-
-		return 207;
+		$curlURL = "http://213.171.204.244/liveLeadHopperDm.php";
+		$curlres = curl_init($curlURL);
+		curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
+		$curlResRaw = curl_exec($curlres);
+		$dataArr = json_decode($curlResRaw,true);
+		return number_format(doubleval($dataArr['Live Leads']));
 	}
 }
