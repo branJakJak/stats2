@@ -160,7 +160,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Live P
@@ -172,7 +172,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-content -->
         </div> <!-- /widget --> 
       </div>
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Converted
@@ -184,7 +184,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-content -->
         </div> <!-- /widget -->        
       </div>
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             Live D
