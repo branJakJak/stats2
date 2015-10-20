@@ -37,6 +37,8 @@ class SiteController extends Controller
         $data['converRate']  = $data['converRate'].'%';
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
 
+        $data['liveD'] = LiveDRemoteData::getValue();
+
         $data['liveRevDvalue'] = LiveRevD::getValue();
         $data['liveRevPvalue'] = LiveRevP::getValue();
 
@@ -55,6 +57,7 @@ class SiteController extends Controller
         
 
         if (Yii::app()->request->isAjaxRequest) {
+        	$data['liveD'] = LiveDRemoteData::getValue();
         	$data['liveRevDvalue'] = $data['liveRevDvalue'];
         	$data['liveRevPvalue'] = $data['liveRevPvalue'];
         	$data['convertedDealRaw'] = $data['convertedDeal'];
@@ -67,6 +70,7 @@ class SiteController extends Controller
             Yii::app()->end();
         }
 		$this->render('newui',array(
+                'liveD'=>$data['liveD'],
                 'revDVal'=>$data['liveRevDvalue'],
                 'revPVal'=>$data['liveRevPvalue'],
                 'waiting'=>$data['waiting'],
