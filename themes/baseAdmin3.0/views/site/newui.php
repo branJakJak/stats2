@@ -26,8 +26,8 @@ $refreshContents = <<<EOL
             }else{
               jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","red");
             }
-            jQuery("#liveRevDvalue").html("&pound; "+data.liveRevDvalue);
-            jQuery("#liveRevPvalue").html("&pound; "+data.liveRevPvalue);
+            jQuery("#liveRevDvalue").html(data.liveRevDvalue);
+            jQuery("#liveRevPvalue").html(data.liveRevPvalue);
             console.log(data);
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -272,7 +272,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-6 col-lg-6">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            REV P
+            REV P &pound; 
           </div> <!-- /widget-header -->
 
 
@@ -287,7 +287,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           <?php endif ?>
               <div class='big-label' >
                 <b id="liveRevPvalue" style="font-size: 68%;">
-                  &pound; <?php echo $revPVal ?>
+                  <?php echo $revPVal ?>
                 </b>
               </div>
             </div> <!-- /widget-content -->
@@ -302,12 +302,12 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-6 col-lg-6">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            REV D
+            REV D &pound; 
           </div> <!-- /widget-header -->
           <div class="widget-content" style="color: white;background: darkblue;">
             <div class='big-label'>
               <b id="liveRevDvalue" style="font-size:68%">
-                &pound; <?php echo $revDVal ?>
+                <?php echo $revDVal ?>
               </b>
             </div>
           </div> <!-- /widget-content -->
