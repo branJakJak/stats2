@@ -12,6 +12,6 @@ class LiveRevD
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = $dbConnection->createCommand("SELECT * FROM roadto_rich.debt_apporved_today")->queryRow();
 		$doubleEval = doubleval($result['total']);
-		return number_format($doubleEval);
+		return $doubleEval;
 	}
 }
