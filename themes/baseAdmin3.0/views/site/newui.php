@@ -302,7 +302,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-6 col-lg-6">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            REV D &pound; 
+            PBA
           </div> <!-- /widget-header -->
           <div class="widget-content" style="color: white;background: darkblue;">
             <div class='big-label'>
