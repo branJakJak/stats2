@@ -7,12 +7,11 @@ class ConvertedDealReport
 
 	public static function getLiveReport()
 	{
-		$curlURL = "http://213.171.204.244/pba.php";
+		$curlURL = "http://roadtoriches.co.uk/convertedDeal.php";
 		$curlres = curl_init($curlURL);
 		curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
 		$curlResRaw = curl_exec($curlres);
-		$curlResRaw = json_decode($curlResRaw,true);
-		return $curlResRaw["pba_sales"];
+		return $curlResRaw;
 	}
 
 }
