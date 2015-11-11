@@ -68,6 +68,14 @@ return array(
             'password' => 'V-ytUr33f$w#',
             'charset' => 'utf8',
           ),
+        'directDialler'=>array(
+            'class' => 'CDbConnection',
+            'connectionString' => 'mysql:host=213.171.204.244;dbname=asterisk',
+            'emulatePrepare' => true,
+            'username' => 'cron',
+            'password' => '1234',
+            'charset' => 'utf8',
+        ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
