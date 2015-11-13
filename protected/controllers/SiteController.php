@@ -42,7 +42,7 @@ class SiteController extends Controller
         $data['liveRevDvalue'] = LiveRevD::getValue();
         $data['liveRevPvalue'] = LiveRevP::getValue();
 
-        $data['liveD'] = intval($data['liveRevDvalue']/4);
+        $data['liveD'] = number_format($data['liveRevDvalue']/4,2);
 
         if ($data['orig_tbc'] != '0') {
 	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
