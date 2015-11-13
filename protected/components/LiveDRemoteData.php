@@ -11,6 +11,8 @@ class LiveDRemoteData
 		curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
 		$curlResRaw = curl_exec($curlres);
 		$dataArr = json_decode($curlResRaw,true);
-		return number_format(doubleval($dataArr['Live Leads']));
+		$liveDValue = doubleval($dataArr['Live Leads']);
+		$liveDValue = $liveDValue / 8;
+		return number_format($liveDValue);
 	}
 }
