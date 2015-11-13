@@ -37,10 +37,12 @@ class SiteController extends Controller
         $data['converRate']  = $data['converRate'].'%';
         $data['orig_tbc'] = NumContactedReport::getNumberContact();
 
-        $data['liveD'] = LiveDRemoteData::getValue();
+        // $data['liveD'] = LiveDRemoteData::getValue();
 
         $data['liveRevDvalue'] = LiveRevD::getValue();
         $data['liveRevPvalue'] = LiveRevP::getValue();
+
+        $data['liveD'] = round($data['liveRevDvalue']/4);
 
         if ($data['orig_tbc'] != '0') {
 	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
@@ -51,13 +53,16 @@ class SiteController extends Controller
   	   	$data['leads'] = $leadInfoContainer['leads'];
   	   	$data['contacted'] = $leadInfoContainer['contacted'];
 
+
+
+
+
   	   	$tempAveHoldTimeArr = explode(":", $data['aveHoldTime']);
   	   	unset($tempAveHoldTimeArr[2]);
         $tempAveHoldTime = implode(":", $tempAveHoldTimeArr);
         
 
         if (Yii::app()->request->isAjaxRequest) {
-        	$data['liveD'] = LiveDRemoteData::getValue();
         	$data['liveRevDvalue'] = $data['liveRevDvalue'];
         	$data['liveRevPvalue'] = $data['liveRevPvalue'];
         	$data['convertedDealRaw'] = $data['convertedDeal'];
