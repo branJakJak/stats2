@@ -167,7 +167,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-header -->
           <div class="widget-content" style="background-color: yellow;">
             <div class='big-label'>
-              <b class='fit-to-parent' id="liveWaitingCallContainer" style="font-size: 87%;color: black;"><?php echo $waiting ?></b>
+              <b class='fit-to-parent' id="liveWaitingCallContainer" style="font-size: 77%;color: black;"><?php echo $waiting ?></b>
             </div>
           </div> <!-- /widget-content -->
         </div> <!-- /widget --> 
