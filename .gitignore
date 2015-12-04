@@ -1,0 +1,6 @@
+protected/runtime/*
+assets/*
+data/
+*.bat
+error_log
+protected/vendor
