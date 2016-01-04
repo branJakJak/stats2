@@ -1,9 +1,5 @@
 <?php
 
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-// This is the main Web application configuration. Any writable
-// CWebApplication properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'stats2.roadtoriches.co.uk',
@@ -70,7 +66,7 @@ return array(
           ),
         'directDialler'=>array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=213.171.204.244;dbname=asterisk',
+            'connectionString' => 'mysql:host=149.202.73.207;dbname=asterisk',
             'emulatePrepare' => true,
             'username' => 'cron',
             'password' => '1234',
@@ -108,6 +104,6 @@ return array(
         'adminEmail' => 'webmaster@example.com',
         'description' => 'stats.roadtoriches monitor page',
         'author' => 'stats2.roadtoriches',
-        'mode' => "dev",//[dev,online]
+        'mode' => "online",//[dev,online]
     ),
 );
