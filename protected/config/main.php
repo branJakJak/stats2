@@ -8,6 +8,7 @@ return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'stats2.roadtoriches.co.uk',
     'theme' => 'baseAdmin3.0',
+    
     // preloading 'log' component
     'preload' => array('log'),
     'aliases' => array(
