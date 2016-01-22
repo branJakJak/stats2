@@ -57,14 +57,14 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             var liveRevDvalueBg = "";
             var liveRevDvalueColor = "";
             if (data.liveRevDvalue >=0 && data.liveRevDvalue <= 23.99) {
-                liveRevDvalueBg = "";
-                liveRevDvalueColor = "";
+                liveRevDvalueBg = "red";
+                liveRevDvalueColor = "white";
             }else if (data.liveRevDvalue >= 24 && data.liveRevDvalue <= 39.99) {
-                liveRevDvalueBg = "";
-                liveRevDvalueColor = "";
+                liveRevDvalueBg = "#FFBF00";
+                liveRevDvalueColor = "white";
             }else if (data.liveRevDvalue >= 40) {
-                liveRevDvalueBg = "";
-                liveRevDvalueColor = "";
+                liveRevDvalueBg = "#5FFB17";
+                liveRevDvalueColor = "white";
             }
             jQuery("#liveRevDvalue").parent().parent().css({
               "background-color":liveRevDvalueBg,
@@ -385,7 +385,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 
 
           <?php if ($revDVal >= 24  && $revDVal <= 39.99): ?>
-            <div class="widget-content" style="color: white;background: FFBF00;">
+            <div class="widget-content" style="color: white;background: #FFBF00;">
               <div class='big-label'>
                 <b id="liveRevDvalue" style="font-size:68%">
                   <?php echo $revDVal ?>
@@ -396,7 +396,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 
 
           <?php if ($revDVal >= 40): ?>
-            <div class="widget-content" style="color: white;background: 5FFB17;">
+            <div class="widget-content" style="color: white;background: #5FFB17;">
               <div class='big-label'>
                 <b id="liveRevDvalue" style="font-size:68%">
                   <?php echo $revDVal ?>
