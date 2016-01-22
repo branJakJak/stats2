@@ -76,11 +76,11 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             var liveRevPvalueBg = "";
             var liveRevPvalueColor = "";
             if (data.liveRevPvalue >= 1500) {
-                liveRevPvalueBg = "black";
-                liveRevPvalueColor = "#5FFB17";
+                liveRevPvalueColor = "black";
+                liveRevPvalueBg = "#5FFB17";
             }else if (data.liveRevPvalue < 1500) {
-                liveRevPvalueBg = "white";
-                liveRevPvalueColor = "red";
+                liveRevPvalueColor= "white";
+                liveRevPvalueBg = "red";
             }
             jQuery("#liveRevPvalue").parent().parent().css({
               "background-color":liveRevPvalueBg,
