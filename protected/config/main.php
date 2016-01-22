@@ -109,6 +109,6 @@ return array(
         'adminEmail' => 'webmaster@example.com',
         'description' => 'stats.roadtoriches monitor page',
         'author' => 'stats2.roadtoriches',
-        'mode' => "dev",//[dev,online]
+        'mode' => "online",//[dev,online]
     ),
 );
