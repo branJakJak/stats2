@@ -4,6 +4,15 @@
    $baseUrl = Yii::app()->theme->baseUrl; 
 
 $refreshContents = <<<EOL
+    setInterval(function () {
+      refreshContents();
+    }, (30) * 1000);
+
+EOL;
+Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CClientScript::POS_READY);
+
+?>
+<script type="text/javascript">
     function refreshContents() {
         jQuery.ajax({
           url: '/site/index',
@@ -12,6 +21,23 @@ $refreshContents = <<<EOL
           success: function(data, textStatus, xhr) {
             //called when successful
             jQuery("#liveDContainer").html(data.liveD);
+            var backgroundColorLiveD = '';
+            var colorLiveD = '';
+            if (data.liveD >=0 && data.liveD <= 5.99) {
+              backgroundColorLiveD = "red";
+              colorLiveD = 'white';
+            }else if (data.liveD >=6 && data.liveD <= 9.99) {
+              backgroundColorLiveD = "#FFBF00";
+              colorLiveD = 'white';
+            }else if (data.liveD >=10) {
+              backgroundColorLiveD = "#5FFB17";
+              colorLiveD = 'black';
+            }
+            jQuery("#liveDContainer").parent().parent().css({
+              "background-color":backgroundColorLiveD,
+              "color":colorLiveD
+            })
+
             jQuery("#liveWaitingCallContainer").html(data.waiting);
             jQuery("#convertedDealCountContainer").html(data.convertedDealCount);
             jQuery("#contactRateContainer").html(data.converRate);
@@ -26,8 +52,41 @@ $refreshContents = <<<EOL
             }else{
               jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","red");
             }
+
             jQuery("#liveRevDvalue").html(data.liveRevDvalue);
+            var liveRevDvalueBg = "";
+            var liveRevDvalueColor = "";
+            if (data.liveRevDvalue >=0 && data.liveRevDvalue <= 23.99) {
+                liveRevDvalueBg = "";
+                liveRevDvalueColor = "";
+            }else if (data.liveRevDvalue >= 24 && data.liveRevDvalue <= 39.99) {
+                liveRevDvalueBg = "";
+                liveRevDvalueColor = "";
+            }else if (data.liveRevDvalue >= 40) {
+                liveRevDvalueBg = "";
+                liveRevDvalueColor = "";
+            }
+            jQuery("#liveRevDvalue").parent().parent().css({
+              "background-color":liveRevDvalueBg,
+              "color":liveRevDvalueColor
+            });
+
+
             jQuery("#liveRevPvalue").html(data.liveRevPvalue);
+            var liveRevPvalueBg = "";
+            var liveRevPvalueColor = "";
+            if (data.liveRevPvalue >= 1500) {
+                liveRevPvalueBg = "black";
+                liveRevPvalueColor = "#5FFB17";
+            }else if (data.liveRevPvalue < 1500) {
+                liveRevPvalueBg = "white";
+                liveRevPvalueColor = "red";
+            }
+            jQuery("#liveRevPvalue").parent().parent().css({
+              "background-color":liveRevPvalueBg,
+              "color":liveRevPvalueColor
+            });
+
             console.log(data);
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -38,16 +97,10 @@ $refreshContents = <<<EOL
           }
         });
     }
-    setInterval(function () {
-      refreshContents();
-    }, (30) * 1000);
-
-EOL;
-Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CClientScript::POS_READY);
+</script>
 
 
 
-?>
 <style type="text/css">
   b{
     text-align: center;
@@ -293,11 +346,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             REV P &pound; 
           </div> <!-- /widget-header -->
-
-
-
-
-
+          
           <?php if ($convertedDeal >= 1500 ): ?>
             <div class="widget-content" style=" color: black;background: #5FFB17; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
           <?php endif ?>
