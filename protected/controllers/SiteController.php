@@ -27,6 +27,8 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$diallableFetcher = new DiallableFetcher();
+		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
 		$data = LiveCallReport::getLiveReport();
 		$leadInfoContainer = LeadInfoReport::getLiveReport();
         $data['convertedDeal'] = ConvertedDealReport::getLiveReport();
@@ -71,6 +73,7 @@ class SiteController extends Controller
         	$data['aveHoldTime'] = $tempAveHoldTime;
         	$data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
         	$data['orig_averageHoldTime'] = $orig_tempAveHoldTime;
+        	$data['liveAVal'] = $liveAVal;
             echo json_encode($data);
             Yii::app()->end();
         }
@@ -88,7 +91,8 @@ class SiteController extends Controller
                 "tbc"=>$data['tbc'],
                 "orig_tbc"=>$data['orig_tbc'],
                 "leads"=>$data['leads'],
-                "contacted"=>$data['contacted']
+                "contacted"=>$data['contacted'],
+                "liveAVal"=>$liveAVal,
 			));
 	}
 	public function actionNewui()

@@ -38,7 +38,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               "color":colorLiveD
             })
 
-            jQuery("#liveWaitingCallContainer").html(data.waiting);
+            jQuery("#liveWaitingCallContainer").html(data.liveAVal);
             jQuery("#convertedDealCountContainer").html(data.convertedDealCount);
             jQuery("#contactRateContainer").html(data.converRate);
             jQuery("#averageHoldTimeContainer").html(data.aveHoldTime);
@@ -216,11 +216,13 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            Live P
+            LIVEA
           </div> <!-- /widget-header -->
           <div class="widget-content" style="background-color: yellow;">
             <div class='big-label'>
-              <b class='fit-to-parent' id="liveWaitingCallContainer" style="font-size: 77%;color: black;"><?php echo $waiting ?></b>
+              <b class='fit-to-parent' id="liveWaitingCallContainer" style="font-size: 77%;color: black;">
+                <?php echo $liveAVal ?>
+              </b>
             </div>
           </div> <!-- /widget-content -->
         </div> <!-- /widget --> 
