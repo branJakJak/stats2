@@ -27,7 +27,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$diallableFetcher = new DiallableFetcher();
+		$diallableFetcher = new DiallableFetcherUrl();
 		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
 		$data = LiveCallReport::getLiveReport();
 		$leadInfoContainer = LeadInfoReport::getLiveReport();
