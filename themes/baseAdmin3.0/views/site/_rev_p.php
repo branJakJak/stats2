@@ -19,7 +19,7 @@ if ($convertedDeal >= 1500 ) {
   <div class="widget-content" style="<?php echo $applyStyle ?>">
     <div class='big-label' >
       <b id="liveRevPvalue" style="font-size: 68%;">
-        <?php echo $revPVal ?>&pound; 
+        <?php echo $revPVal ?>
       </b>
     </div>
   </div> 
