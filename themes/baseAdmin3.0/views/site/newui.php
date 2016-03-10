@@ -338,7 +338,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-md-6 col-lg-6">
         <?php
-          $this->renderPartial('_rev_p', compact('convertedDeal')); 
+          $this->renderPartial('_rev_p', compact('convertedDeal','revPVal')); 
         ?>
       </div>
       <div class="col-md-6 col-lg-6">
