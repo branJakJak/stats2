@@ -1,8 +1,8 @@
 protected/runtime/*
-assets/*
-data/
+/assets
+protected/data/*
 *.bat
 error_log
 protected/vendor
-.idea/
-.phpintel/
+/.idea
+/.phpintel
