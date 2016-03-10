@@ -219,7 +219,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class='big-label'>
               <b id="convertedDealCountContainer" style="font-size:49%">
                 <?php //echo $convertedDealCount ?>
-                <?php echo $convertedDeal/100000*100; ?>
+                <?php echo number_format($convertedDeal/100000*100, 2); ?> %
               </b>
             </div>
           </div> <!-- /widget-content -->
@@ -235,7 +235,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class='big-label'>
               <b id="liveDContainer" style="font-size:50%">
               <?php //echo $liveD ?>
-              <?php echo $revDVal/1200*100 ?>
+              <?php echo number_format($revDVal/1200*100, 2); ?> %
               </b>
             </div>
           </div> <!-- /widget-content -->
