@@ -3,7 +3,7 @@
 /**
 * 
 */
-class DiallableFetcherUrl extends extends DiallableFetcher
+class DiallableFetcherUrl extends DiallableFetcher
 {
 	public function getByCampaignId($campaign_id)
 	{

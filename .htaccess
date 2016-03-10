@@ -1,11 +1,14 @@
-# index file can be index.php, home.php, default.php etc.
-DirectoryIndex index.php
+# If you want to allow an IP Address
+# Hi Paul , if you are reading this
+# visit : iphtaccess.roadtoriches.co.uk
+# username : admin
+# password : Adu9go0mRvCKp1b
 
-# Rewrite engine
-RewriteEngine On
+# -  hellsing357
+# - -----  PMSL rolling (Paul)
 
-# condition with escaping special chars
-RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
+# PREVENT VIEWING OF .HTACCESS
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
