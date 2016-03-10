@@ -219,7 +219,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class='big-label'>
               <b id="convertedDealCountContainer" style="font-size:49%">
                 <?php //echo $convertedDealCount ?>
-                <?php echo number_format($convertedDeal/100000*100, 2); ?>
+                <?php echo number_format($convertedDeal/100000*100); ?>
               </b>
             </div>
           </div> <!-- /widget-content -->
@@ -237,7 +237,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
               <?php //echo $liveD ?>
               <?php 
                 $pbaPercent = ( ($revDVal/1200) *100 ) * 100;
-                echo number_format($pbaPercent, 2); 
+                echo number_format($pbaPercent); 
               ?>
               
               </b>
