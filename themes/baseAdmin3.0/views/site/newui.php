@@ -219,7 +219,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             <div class='big-label'>
               <b id="convertedDealCountContainer" style="font-size:49%">
                 <?php //echo $convertedDealCount ?>
-                <?php echo number_format($convertedDeal/100000*100); ?> %
+                <?php $piTarget = ( ( $convertedDeal/100000 ) *100 ) * 100  ?>
+                <?php echo number_format($piTarget); ?> %
               </b>
             </div>
           </div> <!-- /widget-content -->
