@@ -37,15 +37,15 @@ class SiteController extends Controller
         	$data['pba'] = $revDValue;
         	$data['revPVal'] = $revPValue;
         	$data['liveAVal'] = $liveAVal;
-        	$data['piTarget'] = $revPValue/100000*100;
-        	$data['pbaTarget'] = $revDValue/1200*100;
+        	$data['piTarget'] = number_format($revPValue/100000*100, 2);
+        	$data['pbaTarget'] = number_format($revDValue/1200*100,2);
             echo json_encode($data);
             Yii::app()->end();
         }
 		$this->render('newui',array(
                 "liveAVal"=>$liveAVal,
-                'piTarget'=>$revPValue/100000*100,
-                'pbaTarget'=>$revDValue/1200*100,
+                'piTarget'=>number_format($revPValue/100000*100, 2),
+                'pbaTarget'=>number_format($revDValue/1200*100,2),
                 'revPVal'=>$revPVal,
                 'pba'=>$revDValue,
 			));
