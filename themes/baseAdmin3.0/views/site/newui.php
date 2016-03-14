@@ -258,3 +258,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 
 
 </div> <!-- /container -->
+
+
+<script type="text/javascript">
+  refreshContents();
+</script>
