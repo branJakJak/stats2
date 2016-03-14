@@ -69,20 +69,20 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             // });
 
 
-            // jQuery("#liveRevPvalue").html(data.revPVal);
-            // var liveRevPvalueBg = "";
-            // var liveRevPvalueColor = "";
-            // if (data.liveRevPvalue >= 1500) {
-            //     liveRevPvalueColor = "black";
-            //     liveRevPvalueBg = "#5FFB17";
-            // }else if (data.liveRevPvalue < 1500) {
-            //     liveRevPvalueColor= "white";
-            //     liveRevPvalueBg = "red";
-            // }
-            // jQuery("#liveRevPvalue").parent().parent().css({
-            //   "background-color":liveRevPvalueBg,
-            //   "color":liveRevPvalueColor
-            // });
+            jQuery("#liveRevPvalue").html(data.revPVal);
+            var liveRevPvalueBg = "";
+            var liveRevPvalueColor = "";
+            if (data.liveRevPvalue >= 1500) {
+                liveRevPvalueColor = "black";
+                liveRevPvalueBg = "#5FFB17";
+            }else if (data.liveRevPvalue < 1500) {
+                liveRevPvalueColor= "white";
+                liveRevPvalueBg = "red";
+            }
+            jQuery("#liveRevPvalue").parent().parent().css({
+              "background-color":liveRevPvalueBg,
+              "color":liveRevPvalueColor
+            });
 
             console.log(data);
           },
