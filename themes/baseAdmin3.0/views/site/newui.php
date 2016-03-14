@@ -72,10 +72,10 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             jQuery("#liveRevPvalue").html(data.revPVal);
             var liveRevPvalueBg = "";
             var liveRevPvalueColor = "";
-            if (data.liveRevPvalue >= 1500) {
+            if (data.revPVal >= 1500) {
                 liveRevPvalueColor = "black";
                 liveRevPvalueBg = "#5FFB17";
-            }else if (data.liveRevPvalue < 1500) {
+            }else if (data.revPVal < 1500) {
                 liveRevPvalueColor= "white";
                 liveRevPvalueBg = "red";
             }
@@ -249,7 +249,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       </div>
       <div class="col-md-6 col-lg-6">
 
-      <?php $this->renderPartial('_pba', compact('pba')); ?>
+        <?php $this->renderPartial('_pba', compact('pba')); ?>
 
       </div>
     </div>
