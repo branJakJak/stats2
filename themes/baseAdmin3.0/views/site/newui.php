@@ -249,7 +249,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       </div>
       <div class="col-md-6 col-lg-6">
 
-      <?php $this->renderPartial('_pba', compact('revDVal')); ?>
+      <?php $this->renderPartial('_pba', compact('pba')); ?>
 
       </div>
     </div>
