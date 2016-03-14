@@ -1,11 +1,11 @@
 <?php 
 
 $backGroundColor = "";
-if ($revDVal >= 0  && $revDVal <= 23.99) {
+if ($pba >= 0  && $pba <= 23.99) {
   $backGroundColor = "red";
-}else if ($revDVal >= 24  && $revDVal <= 39.99) {
+}else if ($pba >= 24  && $pba <= 39.99) {
   $backGroundColor = "#FFBF00";
-}else if ($revDVal >= 40) {
+}else if ($pba >= 40) {
   $backGroundColor = "#5FFB17";
 } 
 
@@ -17,8 +17,8 @@ if ($revDVal >= 0  && $revDVal <= 23.99) {
     </div> <!-- /widget-header -->
     <div class="widget-content" style="color: white;background: <?php echo $backGroundColor ?>;">
       <div class='big-label'>
-        <b id="liveRevDvalue" style="font-size:68%">
-          <?php echo $revDVal ?>
+        <b id="livepbaue" style="font-size:68%">
+          <?php echo $pba ?>
         </b>
       </div>
     </div> <!-- /widget-content -->
