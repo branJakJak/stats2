@@ -44,7 +44,8 @@ class SiteController extends Controller
         $data['liveRevDvalue'] = LiveRevD::getValue();
         $data['liveRevPvalue'] = LiveRevP::getValue();
 
-        $data['liveD'] = number_format($data['liveRevDvalue']/4,2);
+        // $data['liveD'] = number_format($data['liveRevDvalue']/4,2);
+        $data['liveD'] = 40;
 
         if ($data['orig_tbc'] != '0') {
 	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
@@ -71,7 +72,8 @@ class SiteController extends Controller
         	$data['convertedDeal'] = "&pound;".number_format(doubleval($data['convertedDeal']));
         	$data["converRate"] = $data['converRate'];
         	$data['aveHoldTime'] = $tempAveHoldTime;
-        	$data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
+        	// $data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
+        	$data['convertedDealCount'] = "£ 1500";
         	$data['orig_averageHoldTime'] = $orig_tempAveHoldTime;
         	$data['liveAVal'] = $liveAVal;
             echo json_encode($data);
@@ -84,7 +86,8 @@ class SiteController extends Controller
                 'waiting'=>$data['waiting'],
                 "called"=>$data['called'],
                 "convertedDeal"=>doubleval($data['convertedDeal']),
-                "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
+                // "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
+                "convertedDealCount"=>"£ 1500",
                 "converRate"=>$data['converRate'],
                 "averageHoldTime"=>$tempAveHoldTime,
                 'orig_averageHoldTime' => $orig_tempAveHoldTime,
