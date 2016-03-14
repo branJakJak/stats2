@@ -20,72 +20,69 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           dataType: 'json',
           success: function(data, textStatus, xhr) {
             //called when successful
-            jQuery("#liveDContainer").html(data.liveD);
-            var backgroundColorLiveD = '';
-            var colorLiveD = '';
-            if (data.liveD >=0 && data.liveD <= 5.99) {
-              backgroundColorLiveD = "red";
-              colorLiveD = 'white';
-            }else if (data.liveD >=6 && data.liveD <= 9.99) {
-              backgroundColorLiveD = "#FFBF00";
-              colorLiveD = 'white';
-            }else if (data.liveD >=10) {
-              backgroundColorLiveD = "#5FFB17";
-              colorLiveD = 'black';
-            }
-            jQuery("#liveDContainer").parent().parent().css({
-              "background-color":backgroundColorLiveD,
-              "color":colorLiveD
-            })
+            // jQuery("#liveDContainer").html(data.liveD);
+            // var backgroundColorLiveD = '';
+            // var colorLiveD = '';
+            // if (data.liveD >=0 && data.liveD <= 5.99) {
+            //   backgroundColorLiveD = "red";
+            //   colorLiveD = 'white';
+            // }else if (data.liveD >=6 && data.liveD <= 9.99) {
+            //   backgroundColorLiveD = "#FFBF00";
+            //   colorLiveD = 'white';
+            // }else if (data.liveD >=10) {
+            //   backgroundColorLiveD = "#5FFB17";
+            //   colorLiveD = 'black';
+            // }
+            // jQuery("#liveDContainer").parent().parent().css({
+            //   "background-color":backgroundColorLiveD,
+            //   "color":colorLiveD
+            // })
 
+            /*Live A*/
             jQuery("#liveWaitingCallContainer").html(data.liveAVal);
-            jQuery("#convertedDealCountContainer").html(data.convertedDealCount);
-            jQuery("#contactRateContainer").html(data.converRate);
-            jQuery("#averageHoldTimeContainer").html(data.aveHoldTime);
-            jQuery("#convertedDealValue").html(data.convertedDeal);
-            jQuery("#managerMessagesContainer").html(data.tbc);
-            jQuery("#totalLeads").html(data.leads);
-            jQuery("#totalHumanContact").html(data.contacted);
-            tmpConvertedDealRaw = parseFloat(data.convertedDealRaw);
-            if (tmpConvertedDealRaw >= 4347) {
-              jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","green");
-            }else{
-              jQuery("#content > div > div > div:nth-child(2) > div:nth-child(2) > div.widget-content").css("background-color","red");
-            }
+            
+            /*PBA*/
+            jQuery("#liveRevDvalue").html(data.pba);
 
-            jQuery("#liveRevDvalue").html(data.liveRevDvalue);
-            var liveRevDvalueBg = "";
-            var liveRevDvalueColor = "";
-            if (data.liveRevDvalue >=0 && data.liveRevDvalue <= 23.99) {
-                liveRevDvalueBg = "red";
-                liveRevDvalueColor = "white";
-            }else if (data.liveRevDvalue >= 24 && data.liveRevDvalue <= 39.99) {
-                liveRevDvalueBg = "#FFBF00";
-                liveRevDvalueColor = "white";
-            }else if (data.liveRevDvalue >= 40) {
-                liveRevDvalueBg = "#5FFB17";
-                liveRevDvalueColor = "white";
-            }
-            jQuery("#liveRevDvalue").parent().parent().css({
-              "background-color":liveRevDvalueBg,
-              "color":liveRevDvalueColor
-            });
+            /* PI Target*/
+            jQuery("#piTarget").html(data.piTarget);
+
+            /* PBA Target*/
+            jQuery("#pbaTarget").html(data.pbaTarget);
+
+            // jQuery("#liveRevDvalue").html(data.pba);
+            // var liveRevDvalueBg = "";
+            // var liveRevDvalueColor = "";
+            // if (data.liveRevDvalue >=0 && data.liveRevDvalue <= 23.99) {
+            //     liveRevDvalueBg = "red";
+            //     liveRevDvalueColor = "white";
+            // }else if (data.liveRevDvalue >= 24 && data.liveRevDvalue <= 39.99) {
+            //     liveRevDvalueBg = "#FFBF00";
+            //     liveRevDvalueColor = "white";
+            // }else if (data.liveRevDvalue >= 40) {
+            //     liveRevDvalueBg = "#5FFB17";
+            //     liveRevDvalueColor = "white";
+            // }
+            // jQuery("#liveRevDvalue").parent().parent().css({
+            //   "background-color":liveRevDvalueBg,
+            //   "color":liveRevDvalueColor
+            // });
 
 
-            jQuery("#liveRevPvalue").html(data.liveRevPvalue);
-            var liveRevPvalueBg = "";
-            var liveRevPvalueColor = "";
-            if (data.liveRevPvalue >= 1500) {
-                liveRevPvalueColor = "black";
-                liveRevPvalueBg = "#5FFB17";
-            }else if (data.liveRevPvalue < 1500) {
-                liveRevPvalueColor= "white";
-                liveRevPvalueBg = "red";
-            }
-            jQuery("#liveRevPvalue").parent().parent().css({
-              "background-color":liveRevPvalueBg,
-              "color":liveRevPvalueColor
-            });
+            // jQuery("#liveRevPvalue").html(data.revPVal);
+            // var liveRevPvalueBg = "";
+            // var liveRevPvalueColor = "";
+            // if (data.liveRevPvalue >= 1500) {
+            //     liveRevPvalueColor = "black";
+            //     liveRevPvalueBg = "#5FFB17";
+            // }else if (data.liveRevPvalue < 1500) {
+            //     liveRevPvalueColor= "white";
+            //     liveRevPvalueBg = "red";
+            // }
+            // jQuery("#liveRevPvalue").parent().parent().css({
+            //   "background-color":liveRevPvalueBg,
+            //   "color":liveRevPvalueColor
+            // });
 
             console.log(data);
           },
@@ -217,10 +214,8 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           </div> <!-- /widget-header -->
           <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
             <div class='big-label'>
-              <b id="convertedDealCountContainer" style="font-size:49%">
-                <?php //echo $convertedDealCount ?>
-                <?php $piTarget = ( ( $convertedDeal/100000 ) *100 ) * 100  ?>
-                <?php echo number_format($piTarget); ?> %
+              <b id="piTarget" style="font-size:49%">
+                <?php echo $piTarget ?> %
               </b>
             </div>
           </div> <!-- /widget-content -->
@@ -231,115 +226,25 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
             PBA % Target
           </div> <!-- /widget-header -->
-          <?php if ($liveD >=0 && $liveD <= 5.99): ?>
           <div class="widget-content" style="background-color: red;color:white !important">
             <div class='big-label'>
-              <b id="liveDContainer" style="font-size:50%">
-              <?php //echo $liveD ?>
-              <?php 
-                $pbaPercent = ( ($revDVal/1200) *100 ) * 100;
-                echo number_format($pbaPercent); 
-              ?> %
-              
+              <b id="pbaTarget" style="font-size:50%">
+                <?php echo $pbaTarget ?> %
               </b>
             </div>
           </div> <!-- /widget-content -->
-          <?php endif ?>
-          <?php if ($liveD >=6 && $liveD <= 9.99): ?>
-          <div class="widget-content" style="background-color: #FFBF00;color:white !important">
-            <div class='big-label'>
-              <b id="liveDContainer" style="font-size:87%"><?php echo $liveD ?></b>
-            </div>
-          </div> <!-- /widget-content -->
-          <?php endif ?>
-
-          <?php if ($liveD >=10): ?>
-          <div class="widget-content" style="background-color: #5FFB17;color: black !important">
-            <div class='big-label'>
-              <b id="liveDContainer" style="font-size:87%"><?php echo $liveD ?></b>
-            </div>
-          </div> <!-- /widget-content -->
-          <?php endif ?>
-
-
         </div> <!-- /widget -->
       </div>
     </div>
   </div>
   <hr>
-  <div class="row hidden">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-md-10 col-lg-10 col-lg-offset-1">
-        <div class="widget ">
-          <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            Value &pound;
-          </div> <!-- /widget-header -->
 
 
-          <?php if ($convertedDeal >= 4347 ): ?>
-            <div class="widget-content" style=" color: white;background: #8fc800; /* Old browsers */        background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fc800), color-stop(100%,#8fc800)); /* Chrome,Safari4+ */        background: -webkit-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Chrome10+,Safari5.1+ */        background: -o-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* Opera 11.10+ */        background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */        background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc800', endColorstr='#8fc800',GradientType=0 ); /* IE6-9 */;">
-          <?php endif ?>
-          <?php if ($convertedDeal < 4347 ): ?>
-            <div class="widget-content " style=" color: white;background: #ff1a00; /* Old browsers */  background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff1a00), color-stop(100%,#ff1a00)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* IE10+ */  background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */;">
-          <?php endif ?>
-              <div class='big-label' >
-                <b id="convertedDealValue" style="font-size: 87%;">
-                  &pound; <?php echo number_format($convertedDeal) ?>
-                </b>
-              </div>
-            </div> <!-- /widget-content -->
-
-
-
-
-
-          </div> <!-- /widget -->
-
-      </div>
-      
-    </div>
-  </div>
-
-  <div class="row hidden">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-md-4 col-lg-4">
-        <div class="widget ">
-          <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            <!-- <i class="icon-signal"></i> -->
-            Contact Rate
-          </div> <!-- /widget-header -->
-          <div class="widget-content"  style='background: #4f85bb; /* Old browsers */  background: -moz-linear-gradient(top, #4f85bb 0%, #4f85bb 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f85bb), color-stop(100%,#4f85bb)); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top, #4f85bb 0%,#4f85bb 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top, #4f85bb 0%,#4f85bb 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top, #4f85bb 0%,#4f85bb 100%); /* IE10+ */  background: linear-gradient(to bottom, #4f85bb 0%,#4f85bb 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */;  '>
-            <div style='font-size: 100px;padding-top:20px;'>
-              <!-- <b id="contactRateContainer" style="font-size: 117px;color: white;"><?php echo $converRate ?></b> -->
-            </div>
-          </div> <!-- /widget-content -->
-        </div> <!-- /widget -->
-      </div>
-      <div class="col-md-4 col-lg-4">
-        <div class="widget ">
-          <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            <!-- <i class="icon-signal"></i> -->
-            TBC <!-- (<?php echo $convertedDealCount ?> / <?php echo $orig_tbc ?>) -->
-          </div> <!-- /widget-header -->
-          
-          <div class="widget-content" style="background-color: #000090;color: white;">
-            <div class='big-label'>
-              <b id="" style="font-size: 80px;">
-                
-              </b>
-            </div>
-          </div> <!-- /widget-content -->
-        </div> <!-- /widget -->
-      </div>
-      <div class="col-md-4 col-lg-4">
-      </div>
-    </div>
-  </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-md-6 col-lg-6">
         <?php
-          $this->renderPartial('_rev_p', compact('convertedDeal','revPVal')); 
+          $this->renderPartial('_rev_p', compact('revPVal')); 
         ?>
       </div>
       <div class="col-md-6 col-lg-6">

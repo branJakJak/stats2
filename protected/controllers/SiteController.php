@@ -29,70 +29,25 @@ class SiteController extends Controller
 	{
 		$diallableFetcher = new DiallableFetcherUrl();
 		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
-		$data = LiveCallReport::getLiveReport();
-		$leadInfoContainer = LeadInfoReport::getLiveReport();
-        $data['convertedDeal'] = ConvertedDealReport::getLiveReport();
-        $data['convertedDeal'] = ceil($data['convertedDeal']);
-        $data['aveHoldTime'] = AverageHoldTimeReport::getAverage();
-        $data['convertedDealCount'] = ConvertedDealCount::getAverage();
-        $data['converRate'] = AverageContactRate::getAverage();
-        $data['converRate']  = $data['converRate'].'%';
-        $data['orig_tbc'] = NumContactedReport::getNumberContact();
-
-        // $data['liveD'] = LiveDRemoteData::getValue();
-
-        $data['liveRevDvalue'] = LiveRevD::getValue();
-        $data['liveRevPvalue'] = LiveRevP::getValue();
-
-        $data['liveD'] = number_format($data['liveRevDvalue']/4,2);
-
-        if ($data['orig_tbc'] != '0') {
-	  	   	$data['tbc'] = round( ($data['convertedDealCount'] / $data['orig_tbc']) * 100,2);
-	  	   	$data['tbc'] = $data['tbc'].' %';
-        }else{
-        	$data['tbc'] = '0 %';
-        }
-  	   	$data['leads'] = $leadInfoContainer['leads'];
-  	   	$data['contacted'] = $leadInfoContainer['contacted'];
-
-
-
-
-
-  	   	$tempAveHoldTimeArr = explode(":", $data['aveHoldTime']);
-  	   	unset($tempAveHoldTimeArr[2]);
-        $tempAveHoldTime = implode(":", $tempAveHoldTimeArr);
+        $revDValue = LiveRevD::getValue();
+        $revPValue = LiveRevP::getValue();
         
 
         if (Yii::app()->request->isAjaxRequest) {
-        	$data['liveRevDvalue'] = $data['liveRevDvalue'];
-        	$data['liveRevPvalue'] = $data['liveRevPvalue'];
-        	$data['convertedDealRaw'] = $data['convertedDeal'];
-        	$data['convertedDeal'] = "&pound;".number_format(doubleval($data['convertedDeal']));
-        	$data["converRate"] = $data['converRate'];
-        	$data['aveHoldTime'] = $tempAveHoldTime;
-        	$data['convertedDealCount'] = empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'];
-        	$data['orig_averageHoldTime'] = $orig_tempAveHoldTime;
+        	$data['pba'] = $revDValue;
+        	$data['revPVal'] = $revPValue;
         	$data['liveAVal'] = $liveAVal;
+        	$data['piTarget'] = $revPValue/100000*100;
+        	$data['pbaTarget'] = $revDValue/1200*100;
             echo json_encode($data);
             Yii::app()->end();
         }
 		$this->render('newui',array(
-                'liveD'=>$data['liveD'],
-                'revDVal'=>$data['liveRevDvalue'],
-                'revPVal'=>$data['liveRevPvalue'],
-                'waiting'=>$data['waiting'],
-                "called"=>$data['called'],
-                "convertedDeal"=>doubleval($data['convertedDeal']),
-                "convertedDealCount"=>empty($data['convertedDealCount']) ? 0:$data['convertedDealCount'],
-                "converRate"=>$data['converRate'],
-                "averageHoldTime"=>$tempAveHoldTime,
-                'orig_averageHoldTime' => $orig_tempAveHoldTime,
-                "tbc"=>$data['tbc'],
-                "orig_tbc"=>$data['orig_tbc'],
-                "leads"=>$data['leads'],
-                "contacted"=>$data['contacted'],
                 "liveAVal"=>$liveAVal,
+                'piTarget'=>$revPValue/100000*100,
+                'pbaTarget'=>$revDValue/1200*100,
+                'revPVal'=>$revPVal,
+                'pba'=>$revDValue,
 			));
 	}
 	public function actionNewui()
