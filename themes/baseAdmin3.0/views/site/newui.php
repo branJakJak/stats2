@@ -15,7 +15,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 <script type="text/javascript">
     function refreshContents() {
         jQuery.ajax({
-          url: '/site/index',
+          url: '/index.php/site/index',
           type: 'POST',
           dataType: 'json',
           success: function(data, textStatus, xhr) {
