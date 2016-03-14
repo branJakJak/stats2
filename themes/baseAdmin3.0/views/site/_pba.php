@@ -7,7 +7,7 @@ if ($revDVal >= 0  && $revDVal <= 23.99) {
   $backGroundColor = "#FFBF00";
 }else if ($revDVal >= 40) {
   $backGroundColor = "#5FFB17";
-}
+} 
 
 ?>
 
