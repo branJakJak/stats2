@@ -37,8 +37,8 @@ class SiteController extends Controller
         	$data['pba'] = $revDValue;
         	$data['revPVal'] = $revPValue;
         	$data['liveAVal'] = $liveAVal;
-        	$data['piTarget'] = number_format(   ( $revPValue / 100000 * 100 )* 100, 2) .' %';
-        	$data['pbaTarget'] = number_format(  ($revDValue / 1200 * 100) * 100 ,2).' %';
+        	$data['piTarget'] = number_format(   ( $revPValue / 100000 * 100 ), 2) .' %';
+        	$data['pbaTarget'] = number_format(  ($revDValue / 1200 * 100)  ,2).' %';
             echo json_encode($data);
             Yii::app()->end();
         }
@@ -46,8 +46,8 @@ class SiteController extends Controller
                 'pba'=>$revDValue,
                 'revPVal'=>$revPValue,
                 "liveAVal"=>$liveAVal,
-                'piTarget'=>number_format(  ( $revPValue / 100000 * 100 ) * 100  , 2),
-                'pbaTarget'=>number_format( ( $revDValue / 1200 * 100 ) * 100 ,2),
+                'piTarget'=>number_format(  ( $revPValue / 100000 * 100 )   , 2),
+                'pbaTarget'=>number_format( ( $revDValue / 1200 * 100 )  ,2),
 			));
 	}
 	public function actionNewui()
