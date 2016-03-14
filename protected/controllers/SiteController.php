@@ -44,7 +44,7 @@ class SiteController extends Controller
         }
 		$this->render('newui',array(
                 'pba'=>$revDValue,
-                'revPVal'=>$revPVal,
+                'revPVal'=>$revPValue,
                 "liveAVal"=>$liveAVal,
                 'piTarget'=>number_format(  ( $revPValue / 100000 * 100 ) * 100  , 2),
                 'pbaTarget'=>number_format( ( $revDValue / 1200 * 100 ) * 100 ,2),
