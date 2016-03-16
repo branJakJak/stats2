@@ -49,8 +49,8 @@ class SiteController extends Controller
                 'pba'=>$revDValue,
                 'revPVal'=>$revPValue,
                 "liveAVal"=>$liveAVal,
-                'piTarget'=>number_format(  ( $revPValue / 1500 * 100 )   , 0) . ' %',
-                'pbaTarget'=>number_format( ( $revDValue / 40 * 100 )  ,0). ' %',
+                'piTarget'=>number_format(  ( $revPValue / 1500 * 100 )   , 0) ,
+                'pbaTarget'=>number_format( ( $revDValue / 40 * 100 )  ,0),
 			));
 	}
 	public function actionNewui()
