@@ -15,7 +15,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 <script type="text/javascript">
     function refreshContents() {
         jQuery.ajax({
-          url: '/index.php/site/index',
+          url: window.location.href,
           type: 'POST',
           dataType: 'json',
           success: function(data, textStatus, xhr) {
@@ -49,6 +49,9 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 
             /* PBA Target*/
             jQuery("#pbaTarget").html(data.pbaTarget);
+
+            /*Live PBA VAlue*/
+            jQuery("#livePbaPvalue").html(data.livePbaValue);
 
             // jQuery("#liveRevDvalue").html(data.pba);
             // var liveRevDvalueBg = "";
@@ -242,15 +245,18 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
 
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-md-6 col-lg-6">
+      <div class="col-md-4 col-lg-4">
         <?php
           $this->renderPartial('_rev_p', compact('revPVal')); 
         ?>
       </div>
-      <div class="col-md-6 col-lg-6">
-
+      <div class="col-md-4 col-lg-4">
+        <?php
+          $this->renderPartial('_live_pba', compact('livePbaValue')); 
+        ?>
+      </div>
+      <div class="col-md-4 col-lg-4">
         <?php $this->renderPartial('_pba', compact('pba')); ?>
-
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ if ($pba >= 0  && $pba <= 23.99) {
     </div> <!-- /widget-header -->
     <div class="widget-content" style="color: white;background: <?php echo $backGroundColor ?>;">
       <div class='big-label'>
-        <b id="livepbaue" style="font-size:68%">
+        <b id="liveRevDvalue" style="font-size:68%">
           <?php echo $pba ?>
         </b>
       </div>
