@@ -11,11 +11,9 @@ class DiallableFetcherUrl extends DiallableFetcher
 		$dbConnection = Yii::app()->roadtoriches;
 		$sqlCommandStr = <<<EOL
 		SELECT `dialable_leads`,`campaign_id` FROM `asterisk`.`vicidial_campaign_stats`
-		where `campaign_id` = :campaignId 
+		where `campaign_id` = '$campaign_id'
 EOL;
 		$commandContainer = $dbConnection->createCommand($sqlCommandStr);
-		$commandContainer->bindParam(":campaignId ",$tempContainerIdContainer,PDO::PARAM_STR);
-		$commandContainer->execute();
 		$result = $commandContainer->fetchAll();
 		// $curlURL = "http://$serverIp/getCampaignId.php?campaign_id=$campaign_id";
 		// $curlres = curl_init($curlURL);
