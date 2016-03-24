@@ -71,8 +71,8 @@ return array(
           ),
         'directDialler'=>array(
             'class' => 'CDbConnection',
-            // 'connectionString' => 'mysql:host=149.202.73.207;dbname=asterisk',
-            'connectionString' => 'mysql:host=81.138.138.57;dbname=asterisk',
+            'connectionString' => 'mysql:host=149.202.73.207;dbname=asterisk',
+            // 'connectionString' => 'mysql:host=81.138.138.57;dbname=asterisk',
             'emulatePrepare' => true,
             'username' => 'cron',
             'password' => '1234',
