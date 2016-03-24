@@ -14,6 +14,7 @@ class DiallableFetcherUrl extends DiallableFetcher
 		where `campaign_id` = '$campaign_id'
 EOL;
 		$commandContainer = $dbConnection->createCommand($sqlCommandStr);
+		$commandContainer->execute();
 		$result = $commandContainer->fetchAll();
 		// $curlURL = "http://$serverIp/getCampaignId.php?campaign_id=$campaign_id";
 		// $curlres = curl_init($curlURL);
@@ -22,3 +23,4 @@ EOL;
 		return isset($result[0]['dialable_leads']) ? $result[0]['dialable_leads']:0;
 	}
 }
+
