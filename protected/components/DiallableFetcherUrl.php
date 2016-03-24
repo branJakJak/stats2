@@ -8,7 +8,7 @@ class DiallableFetcherUrl extends DiallableFetcher
 	public function getByCampaignId($campaign_id)
 	{
 		$tempContainerIdContainer = $campaign_id;
-		$dbConnection = Yii::app()->roadtoriches;
+		$dbConnection = Yii::app()->directDialler;
 		$sqlCommandStr = <<<EOL
 		SELECT `dialable_leads`,`campaign_id` FROM `asterisk`.`vicidial_campaign_stats`
 		where `campaign_id` = '$campaign_id'
