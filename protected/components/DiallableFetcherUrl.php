@@ -17,6 +17,7 @@ class DiallableFetcherUrl extends DiallableFetcher
 // 		$commandContainer->execute();
 // 		$result = $commandContainer->fetchAll();
 // 		
+		$serverIp = Yii::app()->params['VICI_SERVER_IP'];
 		$curlURL = "http://$serverIp/getCampaignId.php?campaign_id=$campaign_id";
 		$curlres = curl_init($curlURL);
 		curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);

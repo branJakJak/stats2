@@ -1,1 +1,30 @@
-@TODO - re strucutre site controller code , 
+<?php 
+// @TODO - re strucutre site controller code , 
+
+// curl "http://81.138.138.57/getCampaignId.php?campaign_id=LIVEA"
+
+
+// curl "http://149.202.73.207/getCampaignId.php?campaign_id=PBA"
+
+
+
+
+// curl "http://149.202.73.207/getCampaignId.php?campaign_id=LIVEA"
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+
+<?php
+	header("Content-Type: application/json");
+    $conn = new PDO('mysql:host=localhost;dbname=asterisk', 'cron', '1234');
+    $_GET['campaign_id'] = "LIVEA";
+    $query = $conn->prepare("SELECT
+`dialable_leads`,`campaign_id` FROM
+`asterisk`.vicidial_campaign_stats
+where `campaign_id` = :campaignId ");
+    $query->bindParam(":campaignId" , $_GET['campaign_id'] ,PDO::PARAM_STR);
+    $query->execute();
+    $allResult = $query->fetchAll();
+    echo json_encode($allResult);
