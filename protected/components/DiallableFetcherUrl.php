@@ -22,7 +22,7 @@ class DiallableFetcherUrl extends DiallableFetcher
 		$curlres = curl_init($curlURL);
 		curl_setopt($curlres, CURLOPT_RETURNTRANSFER, true);
 		$curlResRaw = curl_exec($curlres);
-		$curlResRaw = json_decode($curlResRaw);
+		$curlResRaw = json_decode($curlResRaw,true);
 		return isset($curlResRaw[0]['dialable_leads']) ? $curlResRaw[0]['dialable_leads']:0;
 		// return isset($result[0]['dialable_leads']) ? $result[0]['dialable_leads']:0;
 	}
