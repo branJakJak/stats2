@@ -29,7 +29,7 @@ class SiteController extends Controller
 	{
 		$diallableFetcher = new DiallableFetcherUrl();
 		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
-		$livePbaValue = $diallableFetcher->getByCampaignId("PBA");
+		$livePbaValue = $diallableFetcher->getByCampaignId("PBAuto");
         $revDValue = LiveRevD::getValue();
         $revPValue = LiveRevP::getValue();
         
