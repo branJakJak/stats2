@@ -111,6 +111,6 @@ return array(
         'description' => 'stats.roadtoriches monitor page',
         'author' => 'stats2.roadtoriches',
         'mode' => "online",//[dev,online]
-        'VICI_SERVER_IP' => "81.138.138.57",
+        'VICI_SERVER_IP' => "79.99.79.205",
     ),
 );
