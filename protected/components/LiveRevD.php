@@ -11,9 +11,35 @@ class LiveRevD
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = null;
 		if (is_null($tonic_account)) {
+			$sqlCommand = <<<EOL
+    SELECT 
+        COUNT(`roadto_rich`.`pbaportal`.`status`) AS `leads`
+    FROM
+        `roadto_rich`.`pbaportal`
+    WHERE
+        (
+        	(`roadto_rich`.`pbaportal`.`date_time` >= CURDATE())
+            AND 
+            (`roadto_rich`.`pbaportal`.`status` IN ('Lead' , 'Packback', 'Esign'))
+        )			
+EOL;
 			$result = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today")->queryRow();
 		}else{
-			$queryObj = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today where tonic_account = :tonic_account");
+			$sqlCommand = <<<EOL
+    SELECT 
+        COUNT(`roadto_rich`.`pbaportal`.`status`) AS `leads`
+    FROM
+        `roadto_rich`.`pbaportal`
+    WHERE
+        (
+        	(`roadto_rich`.`pbaportal`.`date_time` >= CURDATE())
+            AND 
+            (`roadto_rich`.`pbaportal`.`status` IN ('Lead' , 'Packback', 'Esign'))
+            AND
+			(`roadto_rich`.`pbaportal`.`tonic_account` = :tonic_account)
+        )
+EOL;
+			$queryObj = $dbConnection->createCommand($sqlCommand);
 			$queryObj->bindParam(":tonic_account",$tonic_account);
 			$result = $queryObj->queryRow();
 		}
