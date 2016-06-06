@@ -21,11 +21,11 @@ if ($pba >= 0  && $pba <= 23.99) {
           <?php echo $pba?>
         </b>
         <b id="pba_cc001" style="font-size:68%">
-          <?php echo $pba_cc001?>
+          CC001 - <?php echo $pba_cc001?>
         </b>
         <hr>
         <b id="pba_cc002" style="font-size:68%">
-          <?php echo $pba_cc002?>
+          CC002 - <?php echo $pba_cc002?>
         </b>
       </div>
     </div> <!-- /widget-content -->
