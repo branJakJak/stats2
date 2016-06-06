@@ -43,6 +43,10 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
             
             /*PBA*/
             jQuery("#liveRevDvalue").html(data.pba);
+            /*PBA - pba_cc001*/
+            jQuery("#pba_cc001").html(data.pba_cc001);
+            /*PBA - pba_cc002*/
+            jQuery("#pba_cc002").html(data.pba_cc002);
 
             /* PI Target*/
             var tempPiTargetContainer = parseFloat(data.piTarget);
@@ -248,7 +252,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
         ?>
       </div>
       <div class="col-md-4 col-lg-4">
-        <?php $this->renderPartial('_pba', compact('pba')); ?>
+        <?php $this->renderPartial('_pba', compact('pba','pba_cc001','pba_cc002')); ?>
       </div>
 
       <div class="col-md-4 col-lg-4">
