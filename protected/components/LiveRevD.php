@@ -14,7 +14,7 @@ class LiveRevD
 			$result = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today")->queryRow();
 		}else{
 			$queryObj = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today where tonic_account = :tonic_account");
-			$queryObj->params = array(":tonic_account",$tonic_account);
+			$queryObj->bindParam(":tonic_account",$tonic_account);
 			$result = $queryObj->queryRow();
 		}
 		if (is_null($result)) {
