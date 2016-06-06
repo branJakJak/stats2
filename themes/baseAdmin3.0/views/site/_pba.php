@@ -20,12 +20,12 @@ if ($pba >= 0  && $pba <= 23.99) {
         <b id="liveRevDvalue" style="font-size:68%;display:none">
           <?php echo $pba?>
         </b>
-        <small>CC001</small>
+        <div style="font-size: 20px;text-align: center !important;display: block;">CC001</div>
         <b id="pba_cc001" style="font-size:68%">
           <?php echo $pba_cc001?>
         </b>
         <hr>
-        <small>CC002</small>
+        <div style="font-size: 20px;text-align: center !important;display: block;">CC002</div>
         <b id="pba_cc002" style="font-size:68%">
           <?php echo $pba_cc002?>
         </b>
