@@ -24,7 +24,7 @@ class LiveRevD
         )
 EOL;
 			// $result = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today")->queryRow();
-			$result = $dbConnection->createCommand("sqlCommand")->queryRow();
+			$result = $dbConnection->createCommand($sqlCommand)->queryRow();
 		}else{
 			$sqlCommand = <<<EOL
     SELECT 
