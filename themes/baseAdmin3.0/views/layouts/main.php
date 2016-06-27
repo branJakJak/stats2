@@ -48,7 +48,7 @@
 
 <?php //require_once 'tpl_pre_footer.php'; ?>
 
-<?php// require_once 'tpl_footer.php'; ?>
+<?php //require_once 'tpl_footer.php'; ?>
 
     
   </body>
