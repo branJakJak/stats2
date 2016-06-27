@@ -21,9 +21,10 @@ class LiveRevD
         	(`roadto_rich`.`pbaportal`.`date_time` >= CURDATE())
             AND 
             (`roadto_rich`.`pbaportal`.`status` IN ('Lead' , 'Packback', 'Esign'))
-        )			
+        )
 EOL;
-			$result = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today")->queryRow();
+			// $result = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today")->queryRow();
+			$result = $dbConnection->createCommand("sqlCommand")->queryRow();
 		}else{
 			$sqlCommand = <<<EOL
     SELECT 
