@@ -31,9 +31,6 @@ return array(
     ),
     // application components
     'components' => array(
-        'pbaRetriever'=>array(
-                'class'=>'application.components.PbaRetriever',
-            ),
         'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
         ),

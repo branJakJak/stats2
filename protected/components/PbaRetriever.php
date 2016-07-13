@@ -9,7 +9,7 @@ class PbaRetriever
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = null;
 		$sqlCommand = <<<EOL
-	SELECT COUNT(*) as sales  FROM roadto_rich.pbaportal pbaportal WHERE week(date_time,1) = week(NOW())		
+	SELECT COUNT(*) as sales  FROM roadto_rich.pbaportal pbaportal WHERE week(date_time,1) = week(NOW())
 EOL;
 		$queryObj = $dbConnection->createCommand($sqlCommand);
 		$result = $queryObj->queryRow();
