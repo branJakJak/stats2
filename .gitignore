@@ -6,3 +6,4 @@ error_log
 protected/vendor
 /.idea
 /.phpintel
+/TODO

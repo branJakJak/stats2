@@ -1,12 +1,10 @@
 <?php 
-
-
 /**
 * LiveRevD
 */
 class LiveRevD
 {
-		public static function getValue($tonic_account = null)
+	public static function getValue($tonic_account = null)
 	{
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = null;
@@ -23,7 +21,6 @@ class LiveRevD
             (`roadto_rich`.`pbaportal`.`status` IN ('Lead' , 'Packback', 'Esign'))
         )
 EOL;
-			// $result = $dbConnection->createCommand("SELECT * FROM roadto_rich.pba_leads_today")->queryRow();
 			$result = $dbConnection->createCommand($sqlCommand)->queryRow();
 		}else{
 			$sqlCommand = <<<EOL

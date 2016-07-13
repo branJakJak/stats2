@@ -16,15 +16,34 @@
 // error_reporting(E_ALL);
 
 
-<?php
-	header("Content-Type: application/json");
-    $conn = new PDO('mysql:host=localhost;dbname=asterisk', 'cron', '1234');
-    $_GET['campaign_id'] = "LIVEA";
-    $query = $conn->prepare("SELECT
-`dialable_leads`,`campaign_id` FROM
-`asterisk`.vicidial_campaign_stats
-where `campaign_id` = :campaignId ");
-    $query->bindParam(":campaignId" , $_GET['campaign_id'] ,PDO::PARAM_STR);
-    $query->execute();
-    $allResult = $query->fetchAll();
-    echo json_encode($allResult);
+// <?php
+// 	header("Content-Type: application/json");
+//     $conn = new PDO('mysql:host=localhost;dbname=asterisk', 'cron', '1234');
+//     $_GET['campaign_id'] = "LIVEA";
+//     $query = $conn->prepare("SELECT
+// `dialable_leads`,`campaign_id` FROM
+// `asterisk`.vicidial_campaign_stats
+// where `campaign_id` = :campaignId ");
+//     $query->bindParam(":campaignId" , $_GET['campaign_id'] ,PDO::PARAM_STR);
+//     $query->execute();
+//     $allResult = $query->fetchAll();
+//     echo json_encode($allResult);
+
+
+
+
+
+
+
+
+select 
+	sum(`conv_sheet`.`hdukshareafter`) AS `Day_Total` 
+from `conv_sheet` 
+	where 
+		(
+			(`conv_sheet`.`approve_date` >= curdate()) 
+			and 
+			(`conv_sheet`.`Approved` = 1) 
+			and 
+			(`conv_sheet`.`type_of_accident` <> 'debt')
+		)
