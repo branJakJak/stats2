@@ -13,7 +13,7 @@ if ($pba >= 0  && $pba <= 23.99) {
 
   <div class="widget ">
     <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-      PBA
+      PBA Day
     </div> <!-- /widget-header -->
     <div class="widget-content" style="color: white;background: <?php echo $backGroundColor ?>;">
       <div class='big-label'>

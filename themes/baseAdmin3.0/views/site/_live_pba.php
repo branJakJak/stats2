@@ -12,7 +12,7 @@ if ($livePbaValue >= 182) {
 <div class="widget ">
   <!-- widget header -->
   <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-    PBA WEEK TOTAL
+    PBA WEEK
   </div> 
   <!-- /widget-header -->
 
