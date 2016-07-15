@@ -40,9 +40,7 @@ class SiteController extends Controller
         
         $piTarget = number_format(   ( $revPValue / 1500 * 100 ), 0) .' %';
         $pbaTarget = number_format(  ( $livePbaValue / 182 * 100)  ,0).' %';
-        if ( ( $livePbaValue / 182 * 100 ) >= 100) {
-        	$pbaTarget = "100 %";
-        }
+
         if (Yii::app()->request->isAjaxRequest) {
         	$data['livePbaValue'] = $livePbaValue;
         	$data['pba'] = $revDValue;
