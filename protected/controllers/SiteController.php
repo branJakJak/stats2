@@ -39,7 +39,7 @@ class SiteController extends Controller
 		$pba_cc002 = LiveRevD::getValue("cc002");
         
         $piTarget = number_format(   ( $revPValue / 1500 * 100 ), 0) .' %';
-        $pbaTarget = number_format(  ( $livePbaValue / 182 * 100)  ,1).' %';
+        $pbaTarget = sprintf('%02.2f', ( $livePbaValue / 182 * 100)).' %';
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['livePbaValue'] = $livePbaValue;
