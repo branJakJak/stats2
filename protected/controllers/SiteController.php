@@ -38,6 +38,8 @@ class SiteController extends Controller
 		$pba_cc001 = LiveRevD::getValue("cc001");
 		$pba_cc002 = LiveRevD::getValue("cc002");
         
+        $piTarget = number_format(   ( $revPValue / 1500 * 100 ), 0) .' %';
+        $pbaTarget = number_format(  ($revDValue / 182 * 100)  ,0).' %';
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['livePbaValue'] = $livePbaValue;
@@ -46,8 +48,8 @@ class SiteController extends Controller
         	$data['pba_cc002'] = $pba_cc002;
         	$data['revPVal'] = $revPValue;
         	$data['liveAVal'] = $liveAVal;
-        	$data['piTarget'] = number_format(   ( $revPValue / 1500 * 100 ), 0) .' %';
-        	$data['pbaTarget'] = number_format(  ($revDValue / 40 * 100)  ,0).' %';
+        	$data['piTarget'] = $piTarget;
+        	$data['pbaTarget'] = $pbaTarget;
             echo json_encode($data);
             Yii::app()->end();
         }
@@ -58,8 +60,8 @@ class SiteController extends Controller
 		    	'pba_cc002' => $pba_cc002,
                 'revPVal'=>$revPValue,
                 "liveAVal"=>$liveAVal,
-                'piTarget'=>number_format(  ( $revPValue / 1500 * 100 )   , 0) ,
-                'pbaTarget'=>number_format( ( $revDValue / 40 * 100 )  ,0),
+                'piTarget'=>$piTarget,
+                'pbaTarget'=>$pbaTarget
 			));
 	}
 	public function actionNewui()
