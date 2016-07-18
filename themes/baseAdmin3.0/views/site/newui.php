@@ -263,7 +263,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
           <div class="widget-content" style="background-color: red;color:white !important">
             <div class='big-label'>
               <b id="pbaTarget" style="font-size:50%">
-                <?php echo $pbaTarget ?> %
+                <?php echo $pbaTarget ?>
               </b>
             </div>
           </div> <!-- /widget-content -->
