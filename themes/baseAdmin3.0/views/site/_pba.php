@@ -25,7 +25,7 @@ if ($pba >= 0  && $pba <= 23.99) {
           <?php echo $pba_cc001?>
         </b>
         <hr>
-        <div style="font-size: 20px;text-align: center !important;display: block;">CC002</div>
+        <div style="font-size: 20px;text-align: center !important;display: block;">HOT Keys</div>
         <b id="pba_cc002" style="font-size:68%">
           <?php echo $pba_cc002?>
         </b>

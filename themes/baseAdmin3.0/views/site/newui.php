@@ -258,7 +258,7 @@ Yii::app()->clientScript->registerScript('refreshContents', $refreshContents, CC
       <div class="col-md-4 col-lg-4">
         <div class="widget ">
           <div class="widget-header" style='border-radius: 55px 55px 0px 0px;'>
-            PBA Week %
+            HOTKEY WEEK
           </div> <!-- /widget-header -->
           <div class="widget-content" style="background-color: red;color:white !important">
             <div class='big-label'>
