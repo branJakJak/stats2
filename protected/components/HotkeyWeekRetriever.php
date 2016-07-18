@@ -13,7 +13,7 @@ class HotkeyWeekRetriever extends CComponent
 		$sqlCommand = <<<EOL
 		SELECT COUNT(*) as sales  FROM roadto_rich.pbaportal pbaportal where week(date_time,1) = week(NOW()) and tonic_account ='HK'
 EOL;
-		$res = Yii::app()->db->createCommand($sqlCommand)->queryRow();
+		$res = Yii::app()->roadtoriches->createCommand($sqlCommand)->queryRow();
 		return $res['sales'];
 	}
 }

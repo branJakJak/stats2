@@ -13,7 +13,7 @@ class HotkeyTodayRetriever extends CComponent
 		$sqlCommand = <<<EOL
 			SELECT COUNT(*) as sales  FROM roadto_rich.pbaportal pbaportal where date_time >= curdate() and tonic_account ='HK'
 EOL;
-		$result = Yii::app()->db->createCommand($sqlCommand)->queryRow();
+		$result = Yii::app()->roadtoriches->createCommand($sqlCommand)->queryRow();
 		return $result['sales'];
 	}
 
