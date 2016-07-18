@@ -31,6 +31,12 @@ return array(
     ),
     // application components
     'components' => array(
+        'weekdayRetriever'=>array(
+                'class'=>'application.components.HotkeyTodayRetriever'
+            ),
+        'hotkeyWeekRetriever'=>array(
+                'class'=>'application.components.HotkeyWeekRetriever'
+            ),
         'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',
         ),

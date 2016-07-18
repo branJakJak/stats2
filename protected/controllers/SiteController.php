@@ -35,11 +35,17 @@ class SiteController extends Controller
 		// $livePbaValue = $diallableFetcher->getByCampaignId("PBA");
         $revDValue = LiveRevD::getValue();
         $revPValue = LiveRevP::getValue();
+
 		$pba_cc001 = LiveRevD::getValue("cc001");
-		$pba_cc002 = LiveRevD::getValue("cc002");
+		// $pba_cc002 = LiveRevD::getValue("cc002");
+
+		/*HOTKEY Day*/
+		$pba_cc002 = Yii::app()->weekdayRetriever->getValue();
         
         $piTarget = number_format(   ( $revPValue / 1500 * 100 ), 0) .' %';
-        $pbaTarget = sprintf('%02.2f', ( $livePbaValue / 182 * 100)).' %';
+
+        // $pbaTarget = sprintf('%02.2f', ( $livePbaValue / 182 * 100)).' %';
+        $pbaTarget = Yii::app()->hotkeyWeekRetriever->getValue();
 
         if (Yii::app()->request->isAjaxRequest) {
         	$data['livePbaValue'] = $livePbaValue;
