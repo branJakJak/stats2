@@ -28,17 +28,16 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		Yii::import('application.components.PbaRetriever');
-		$diallableFetcher = new DiallableFetcherUrl();
-		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
+		// $diallableFetcher = new DiallableFetcherUrl();
+		// $liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
+		$liveAVal = 0;
 		$livePbaValueObj = new PbaRetriever();
 		$livePbaValue = $livePbaValueObj->getData();
-		// $livePbaValue = $diallableFetcher->getByCampaignId("PBA");
         $revDValue = LiveRevD::getValue();
         $revPValue = LiveRevP::getValue();
 
 		$pba_cc001 = LiveRevD::getValue("cc001");
 		// $pba_cc002 = LiveRevD::getValue("cc002");
-
 		/*HOTKEY Day*/
 		$pba_cc002 = Yii::app()->weekdayRetriever->getValue();
         
