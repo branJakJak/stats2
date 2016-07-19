@@ -12,7 +12,7 @@ if ($piTarget < 100) {
   <div class="widget-content" style="<?php echo $widgetStyle ?>">
     <div class='big-label'>
       <b id="piTarget" style="font-size:49%">
-        <?php echo $piTarget ?> %
+        <?php echo $piTarget ?>
       </b>
     </div>
   </div> <!-- /widget-content -->
