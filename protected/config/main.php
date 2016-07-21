@@ -60,19 +60,6 @@ return array(
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ),
         ),
-        'db' => array(
-            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',
-        ),
-        // uncomment the following to use a MySQL database
-        /*
-          'db'=>array(
-          'connectionString' => 'mysql:host=localhost;dbname=testdrive',
-          'emulatePrepare' => true,
-          'username' => 'root',
-          'password' => '',
-          'charset' => 'utf8',
-          ),
-         */
         'roadtoriches'=>array(
             'class' => 'CDbConnection',
             'connectionString' => 'mysql:host=localhost;dbname=roadto_rich',
@@ -98,7 +85,7 @@ return array(
             'class' => 'CLogRouter',
             'routes' => array(
                 array(
-                    'class' => 'CFileLogRoute',
+                    'class' => 'CWebLogRoute',
                     'levels' => 'error, warning',
                 ),
             // uncomment the following to show log messages on web pages
