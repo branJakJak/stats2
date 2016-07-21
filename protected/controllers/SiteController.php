@@ -34,7 +34,6 @@ class SiteController extends Controller
 		$livePbaValue = $livePbaValueObj->getData();
         $revDValue = LiveRevD::getValue();
         $revPValue = LiveRevP::getValue();
-
 		$pba_cc001 = LiveRevD::getValue("cc001");
 		// $pba_cc002 = LiveRevD::getValue("cc002");
 		/*HOTKEY Day*/
@@ -42,7 +41,6 @@ class SiteController extends Controller
         
         $piTarget = number_format(   ( $revPValue / 1500 * 100 ), 0) .' %';
 
-        // $pbaTarget = sprintf('%02.2f', ( $livePbaValue / 182 * 100)).' %';
         $pbaTarget = Yii::app()->hotkeyWeekRetriever->getValue();
 
         if (Yii::app()->request->isAjaxRequest) {
@@ -68,6 +66,14 @@ class SiteController extends Controller
                 'pbaTarget'=>$pbaTarget
 			));
 	}
+	public function actionTest()
+	{
+		$sqlCommand = "SELECT * FROM roadto_rich.day_pba_total";
+		$res = Yii::app()->roadtoriches->createCommand($sqlCommand)->queryRow();
+		print_r($res);
+		die();
+	}
+
 	public function actionNewui()
 	{
 		$data = DataPlaceholder::generateFakeData();
