@@ -4,12 +4,12 @@
 */
 class PbaRetriever 
 {
-	public function getData()
+	public function getValue()
 	{
 		$dbConnection = Yii::app()->roadtoriches;
 		$result = null;
 		$sqlCommand = <<<EOL
-	SELECT COUNT(*) as sales  FROM roadto_rich.pbaportal pbaportal WHERE week(date_time,1) = week(NOW())
+	SELECT * FROM roadto_rich.week_pba_total
 EOL;
 		$queryObj = $dbConnection->createCommand($sqlCommand);
 		$result = $queryObj->queryRow();

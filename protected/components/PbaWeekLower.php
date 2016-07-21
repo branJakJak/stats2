@@ -1,9 +1,8 @@
 <?php 
-
 /**
-* HotkeyTodayRetriever
+* PbaWeekLower
 */
-class HotkeyTodayRetriever extends CComponent
+class PbaWeekLower extends CComponent
 {
 	public function init()
 	{
@@ -16,5 +15,4 @@ EOL;
 		$result = Yii::app()->roadtoriches->createCommand($sqlCommand)->queryRow();
 		return $result['sales'];
 	}
-
 }
