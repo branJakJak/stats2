@@ -31,6 +31,12 @@ return array(
     ),
     // application components
     'components' => array(
+        'pbaWeekRetriever'=>array(
+                'class'=>'application.components.PbaRetriever'
+            ),
+        'pbaDayTotal'=>array(
+                'class'=>'application.components.HotkeyTodayRetriever'
+            ),
         'weekdayRetriever'=>array(
                 'class'=>'application.components.HotkeyTodayRetriever'
             ),
