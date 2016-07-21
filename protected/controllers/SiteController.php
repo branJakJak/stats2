@@ -28,8 +28,8 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		Yii::import('application.components.PbaRetriever');
-		// $diallableFetcher = new DiallableFetcherUrl();
-		// $liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
+		$diallableFetcher = new DiallableFetcherUrl();
+		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
 		$liveAVal = 0;
 		$livePbaValueObj = new PbaRetriever();
 		$livePbaValue = $livePbaValueObj->getData();
