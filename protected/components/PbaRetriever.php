@@ -2,8 +2,12 @@
 /**
 * PbaRetriever
 */
-class PbaRetriever 
+class PbaRetriever extends CComponent
 {
+	public function init()
+	{
+		
+	}
 	public function getValue()
 	{
 		$dbConnection = Yii::app()->roadtoriches;

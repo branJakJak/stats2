@@ -35,7 +35,7 @@ return array(
                 'class'=>'application.components.PbaRetriever'
             ),
         'pbaDayTotal'=>array(
-                'class'=>'application.components.HotkeyTodayRetriever'
+                'class'=>'application.components.PbaDayTotal'
             ),
         'weekdayRetriever'=>array(
                 'class'=>'application.components.HotkeyTodayRetriever'
