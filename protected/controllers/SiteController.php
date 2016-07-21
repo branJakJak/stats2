@@ -69,7 +69,7 @@ class SiteController extends Controller
 	public function actionTest()
 	{
 		$sqlCommand = "SELECT * FROM roadto_rich.day_pba_total";
-		$res = Yii::app()->roadtoriches->createCommand($sqlCommand)->queryRow();
+		$res = Yii::app()->roadtoriches->createCommand($sqlCommand)->queryAll();
 		print_r($res);
 		die();
 	}
