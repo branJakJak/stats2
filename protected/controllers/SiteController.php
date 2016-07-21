@@ -30,7 +30,6 @@ class SiteController extends Controller
 		Yii::import('application.components.PbaRetriever');
 		$diallableFetcher = new DiallableFetcherUrl();
 		$liveAVal = $diallableFetcher->getByCampaignId("LIVEA");
-		$liveAVal = 0;
 		$livePbaValueObj = new PbaRetriever();
 		$livePbaValue = $livePbaValueObj->getData();
         $revDValue = LiveRevD::getValue();
