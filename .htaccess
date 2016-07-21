@@ -1,14 +1,18 @@
-# If you want to allow an IP Address
-# Hi Paul , if you are reading this
-# visit : iphtaccess.roadtoriches.co.uk
-# username : admin
-# password : Adu9go0mRvCKp1b
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /home/roadto/.htpasswd
+Require valid-user
 
-# -  hellsing357
-# - -----  PMSL rolling (Paul)
+# index file can be index.php, home.php, default.php etc.
+DirectoryIndex index.php
+Options -Indexes
+# Rewrite engine
+RewriteEngine On
 
-# PREVENT VIEWING OF .HTACCESS
-<Files .htaccess>
- order allow,deny
- deny from all
-</Files>
+# condition with escaping special chars
+RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
+
+
