@@ -7,3 +7,4 @@ protected/vendor
 /.idea
 /.phpintel
 /TODO
+.htaccess/

@@ -1,3 +1,9 @@
+# PREVENT VIEWING OF .HTACCESS
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+
 # index file can be index.php, home.php, default.php etc.
 DirectoryIndex index.php
 Options -Indexes
@@ -11,8 +17,3 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
 
 
-# PREVENT VIEWING OF .HTACCESS
-<Files .htaccess>
- order allow,deny
- deny from all
-</Files>
